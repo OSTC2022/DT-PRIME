@@ -46,6 +46,21 @@ export const INITIAL_CARD_STYLES: Record<string, ProductSheetStyleConfig> = {
   } as ProductSheetStyleConfig,
   "sheet-30": {
     "height": 160
+  } as ProductSheetStyleConfig,
+  "sheet-17": {
+    "height": 160
+  } as ProductSheetStyleConfig,
+  "sheet-53": {
+    "height": 160
+  } as ProductSheetStyleConfig,
+  "sheet-52": {
+    "height": 160
+  } as ProductSheetStyleConfig,
+  "sheet-50": {
+    "height": 188
+  } as ProductSheetStyleConfig,
+  "sheet-47": {
+    "height": 188
   } as ProductSheetStyleConfig
 };
 

@@ -187,6 +187,8 @@ const RAW: ProductSheetCardInput[] = [
     title: "인텐시브",
     highlight: "포밍 케이 클렌저",
     tags: ["#복합히알루론산 #병풀 #마데카소","#촉촉한 클렌징 #말끔한 클렌징"],
+    bottom: "120ml",
+    price: "28,000원",
     color: "k",
   },
   {
@@ -431,8 +433,9 @@ const RAW: ProductSheetCardInput[] = [
     brand: "유쏘랩",
     line: "바이오",
     title: "선블럭",
-    highlight: "",
     tags: ["#SPF50+/PA++++ #혼합자차","#자외선차단&피부손상예방","#가볍고 산뜻하게"],
+    bottom: "50ml",
+    price: "32,000원",
     color: "sun",
   },
   {
@@ -457,16 +460,17 @@ const RAW: ProductSheetCardInput[] = [
     brand: "유쏘랩",
     line: "바이오",
     title: "브라이트닝 블리칭 앰플",
-    highlight: "",
     tags: ["#멜라닌억제(델타이드34종)","#알부틴 #레몬추출물","#나이아신 #글루타티온"],
+    bottom: "50ml / 500ml",
+    price: "45,000원 / 130,000원",
     color: "sun",
   },
   {
     brand: "종근당",
-    line: "",
     title: "더마365 부스터샷 5000",
-    highlight: "",
     tags: ["#리들샷","#피부 컨디셔닝 부스터","#피부 자극 테스트 완료"],
+    bottom: "50ml x 10개 한정판",
+    price: "SET 70,000원",
     color: "ckdPink",
   },
   {
@@ -475,6 +479,8 @@ const RAW: ProductSheetCardInput[] = [
     title: "인텐시브 리제너레이트",
     highlight: "레티놀 크림",
     tags: ["#안티에이징 #모공탄력","#PDRN #순수비타민A"],
+    bottom: "30ml",
+    price: "85,000원",
     color: "retinol",
   },
   {
@@ -483,6 +489,8 @@ const RAW: ProductSheetCardInput[] = [
     title: "인텐시브 리제너레이트",
     highlight: "레티놀 앰플",
     tags: ["#주름개선 #모공탄력 #안티에이징","#턴오버주기 #세포재생주기"],
+    bottom: "30ml",
+    price: "85,000원",
     color: "retinol",
   },
   {
@@ -504,11 +512,10 @@ const RAW: ProductSheetCardInput[] = [
   },
   {
     brand: "종근당",
-    line: "",
     title: "더마그랩 PDRN크림",
-    highlight: "",
     tags: ["#PDRN 800ppm","#덱스판테놀 #피부재생 #영양공급"],
     bottom: "10g/30g",
+    price: "35,000원/70,000원",
     color: "ckdGreen",
   },
 ];

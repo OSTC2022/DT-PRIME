@@ -38,8 +38,8 @@ export function ProductSheetIndividualSection({
   updateCards: (ids: string[], patch: Partial<ProductSheetCardData>) => void;
   panelExpandTick?: number;
 }) {
-  const [panelOpen, setPanelOpen] = useState(true);
-  const [pickerOpen, setPickerOpen] = useState(true);
+  const [panelOpen, setPanelOpen] = useState(false);
+  const [pickerOpen, setPickerOpen] = useState(false);
   const [query, setQuery] = useState("");
 
   useEffect(() => {

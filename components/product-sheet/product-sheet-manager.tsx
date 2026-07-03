@@ -429,7 +429,7 @@ export function ProductSheetManager() {
 
         onReset={() => {
 
-          if (confirm("모든 카드를 초기 데이터로 되돌릴까요?")) {
+          if (confirm("카드·스타일을 저장된 상태로 되돌릴까요?")) {
 
             resetToInitial();
 
@@ -437,7 +437,7 @@ export function ProductSheetManager() {
 
             setFocusId(null);
 
-            toast.success("초기 카드 목록으로 복원했어요.");
+            toast.success("저장된 카드 목록으로 복원했어요.");
 
           }
 

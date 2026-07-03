@@ -108,7 +108,7 @@ export function ProductSheetBulkEditor({
   cards: ProductSheetCardData[];
   panelExpandTick?: number;
 }) {
-  const [panelOpen, setPanelOpen] = useState(true);
+  const [panelOpen, setPanelOpen] = useState(false);
   const [expanded, setExpanded] = useState<Record<string, boolean>>({ "카드 크기 · 셀": true });
   const [presetName, setPresetName] = useState("");
   const [presetCategory, setPresetCategory] = useState("시트 스타일");

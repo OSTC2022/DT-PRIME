@@ -79,7 +79,7 @@ export function ProductSheetToolbar({
             선택 인쇄 ({selectedCount})
           </Button>
           <Button type="button" variant="outline" size="sm" onClick={onReset}>
-            <RotateCcw className="size-3.5" /> 초기 데이터로 복원
+            <RotateCcw className="size-3.5" /> 저장된 상태로 복원
           </Button>
         </div>
       </div>
