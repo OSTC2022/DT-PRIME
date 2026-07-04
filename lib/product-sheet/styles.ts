@@ -63,10 +63,10 @@ export type ProductSheetStyleConfig = {
 /** 엑셀 열28·행110 기준 기본 스타일 */
 export function createDefaultSheetStyle(): ProductSheetStyleConfig {
   return {
-    cellWidth: SHEET_CELL_WIDTH,
-    cellHeight: SHEET_CELL_HEIGHT,
-    width: SHEET_CARD_WIDTH,
-    height: SHEET_CARD_HEIGHT,
+    cellWidth: 201,
+    cellHeight: 147,
+    width: 188,
+    height: 125,
     borderRadius: 9,
     borderWidth: 2,
     borderColor: "#d1d1d1",
@@ -103,7 +103,7 @@ export function createDefaultSheetStyle(): ProductSheetStyleConfig {
     titleMarginBottom: 0,
     dividerMarginBottom: 2,
     tagLineGap: 2,
-    tagPriceGap: 2,
+    tagPriceGap: 0,
     pricePinBottom: 1,
     titleSingleLine: false,
     topLineHeight: 2,
