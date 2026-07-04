@@ -217,7 +217,7 @@ export function ProductSheetSelectedBatchEditor({
             <Field label="용량">
               <Input
                 value={bottom === MIXED ? "" : bottom}
-                placeholder={bottom === MIXED ? "여러 값" : ""}
+                placeholder={bottom === MIXED ? "여러 값" : "30ml / 100ml · 두 줄은 //"}
                 onChange={(e) => setBottom(e.target.value)}
                 className="h-9"
               />
@@ -225,7 +225,7 @@ export function ProductSheetSelectedBatchEditor({
             <Field label="가격">
               <Input
                 value={price === MIXED ? "" : price}
-                placeholder={price === MIXED ? "여러 값" : ""}
+                placeholder={price === MIXED ? "여러 값" : "48,000원 / 70,000원 · 두 줄은 //"}
                 onChange={(e) => setPrice(e.target.value)}
                 className="h-9"
               />

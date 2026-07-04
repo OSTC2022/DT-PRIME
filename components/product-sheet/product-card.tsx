@@ -1,5 +1,6 @@
 "use client";
 
+import { Fragment } from "react";
 import { getSheetColorTheme } from "@/lib/product-sheet/colors";
 import { AccentLineBar } from "@/components/product-sheet/accent-line-bar";
 import { DividerBar } from "@/components/product-sheet/divider-bar";
@@ -374,38 +375,80 @@ export function ProductCard({
             }
             className={cn(
               "premium-card__price-row",
-              priceVolume.lines.length > 1 && "premium-card__price-row--stacked",
+              priceVolume.layout === "stacked" && "premium-card__price-row--stacked",
               pinBottom && "premium-card__price-row--pin-bottom",
               zoneClass(regionEdit, previewFocus, "price")
             )}
             style={pricePinStyle}
           >
-            {priceVolume.lines.map((line, i) => (
-              <div key={i} className="premium-card__price-line">
-                {line.priceText ? (
-                  <span
-                    className="premium-card__price"
-                    style={{
-                      fontSize: s?.priceFontSize ?? 14,
-                      color: priceColor,
-                    }}
-                  >
-                    {line.priceText}
-                  </span>
-                ) : null}
-                {line.volumeText ? (
-                  <span
-                    className="premium-card__volume"
-                    style={{
-                      fontSize: s?.bottomFontSize ?? 8,
-                      color: s?.bottomColor ?? "#1f2937",
-                    }}
-                  >
-                    ({line.volumeText})
-                  </span>
-                ) : null}
+            {priceVolume.layout === "stacked" ? (
+              priceVolume.lines.map((line, i) => (
+                <div key={i} className="premium-card__price-line">
+                  {line.priceText ? (
+                    <span
+                      className="premium-card__price"
+                      style={{
+                        fontSize: s?.priceFontSize ?? 14,
+                        color: priceColor,
+                      }}
+                    >
+                      {line.priceText}
+                    </span>
+                  ) : null}
+                  {line.volumeText ? (
+                    <span
+                      className="premium-card__volume"
+                      style={{
+                        fontSize: s?.bottomFontSize ?? 8,
+                        color: s?.bottomColor ?? "#1f2937",
+                      }}
+                    >
+                      ({line.volumeText})
+                    </span>
+                  ) : null}
+                </div>
+              ))
+            ) : (
+              <div className="premium-card__price-line">
+                {priceVolume.lines.map((line, i) => (
+                  <Fragment key={i}>
+                    {i > 0 ? (
+                      <span
+                        className="premium-card__price-sep"
+                        style={{
+                          fontSize: s?.priceFontSize ?? 14,
+                          color: priceColor,
+                        }}
+                      >
+                        {" / "}
+                      </span>
+                    ) : null}
+                    {line.priceText ? (
+                      <span
+                        className="premium-card__price"
+                        style={{
+                          fontSize: s?.priceFontSize ?? 14,
+                          color: priceColor,
+                        }}
+                      >
+                        {line.priceText}
+                      </span>
+                    ) : null}
+                    {line.volumeText ? (
+                      <span
+                        className="premium-card__volume"
+                        style={{
+                          fontSize: s?.bottomFontSize ?? 8,
+                          color: s?.bottomColor ?? "#1f2937",
+                        }}
+                      >
+                        ({line.volumeText})
+                      </span>
+                    ) : null}
+                  </Fragment>
+                ))}
               </div>
-            ))}
+            )}
           </div>
         )}
       </div>

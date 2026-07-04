@@ -399,6 +399,12 @@ body {
   white-space: nowrap;
 }
 
+.premium-card__price-sep {
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  flex-shrink: 0;
+}
+
 .premium-card__price {
   font-weight: 900;
   letter-spacing: -0.04em;

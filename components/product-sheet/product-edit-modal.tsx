@@ -92,10 +92,10 @@ export function ProductEditModal({
           </Field>
           <div className="grid grid-cols-2 gap-3">
             <Field label="용량">
-              <Input name="bottom" defaultValue={card.bottom ?? ""} className="h-9" placeholder="50ml / 250ml" />
+              <Input name="bottom" defaultValue={card.bottom ?? ""} className="h-9" placeholder="30ml / 100ml · 두 줄은 //" />
             </Field>
             <Field label="가격">
-              <Input name="price" defaultValue={card.price ?? ""} className="h-9" placeholder="35,000원" />
+              <Input name="price" defaultValue={card.price ?? ""} className="h-9" placeholder="48,000원 / 70,000원 · 두 줄은 //" />
             </Field>
           </div>
           <div className="flex justify-end gap-2 pt-2">
