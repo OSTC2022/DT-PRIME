@@ -1,7 +1,11 @@
 import {
+  EXCEL_ROW_HEIGHT,
+  EXCEL_ROW_HEIGHT_LEGACY,
   SHEET_CARD_HEIGHT,
+  SHEET_CARD_HEIGHT_DUAL,
   SHEET_CARD_WIDTH,
   SHEET_CELL_HEIGHT,
+  SHEET_CELL_HEIGHT_LEGACY,
   SHEET_CELL_WIDTH,
 } from "./types";
 
@@ -56,16 +60,16 @@ export type ProductSheetStyleConfig = {
   thickTopLineHeight: number;
 };
 
-/** 엑셀 열28·행125.25(188×142px) 기준 기본 스타일 — 현재 저장된 시트 스타일 반영 */
+/** 엑셀 열28·행110 기준 기본 스타일 */
 export function createDefaultSheetStyle(): ProductSheetStyleConfig {
   return {
-    cellWidth: 201,
-    cellHeight: 167,
-    width: 188,
-    height: 142,
+    cellWidth: SHEET_CELL_WIDTH,
+    cellHeight: SHEET_CELL_HEIGHT,
+    width: SHEET_CARD_WIDTH,
+    height: SHEET_CARD_HEIGHT,
     borderRadius: 9,
-    borderWidth: 6,
-    borderColor: "#f6f7f9",
+    borderWidth: 2,
+    borderColor: "#d1d1d1",
     backgroundColor: "#ffffff",
     headerBackgroundColor: "#f6f7f9",
     dividerColor: "#9aa3af",
@@ -201,6 +205,23 @@ export function migrateLegacySheetStyle(style: ProductSheetStyleConfig): Product
   }
   if (!style.accentLinePercent || style.accentLinePercent < 4) {
     patch.accentLinePercent = defaults.accentLinePercent;
+  }
+
+  if (style.borderWidth === 6 && style.borderColor === "#f6f7f9") {
+    patch.borderWidth = defaults.borderWidth;
+    patch.borderColor = defaults.borderColor;
+  } else if (style.borderWidth === 6 && !("borderColor" in style)) {
+    patch.borderWidth = defaults.borderWidth;
+    patch.borderColor = defaults.borderColor;
+  }
+
+  const excelRowRatio = EXCEL_ROW_HEIGHT / EXCEL_ROW_HEIGHT_LEGACY;
+  if (style.cellHeight === SHEET_CELL_HEIGHT_LEGACY) {
+    patch.cellHeight = defaults.cellHeight;
+    const scaleCard = (h: number) => Math.round(h * excelRowRatio);
+    if (style.height === 142) patch.height = SHEET_CARD_HEIGHT;
+    else if (style.height === 188) patch.height = SHEET_CARD_HEIGHT_DUAL;
+    else if ([160, 170].includes(style.height)) patch.height = scaleCard(style.height);
   }
 
   return Object.keys(patch).length > 0 ? mergeSheetStyle(style, patch) : style;

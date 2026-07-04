@@ -151,6 +151,23 @@ export function useProductSheet(repository: ProductSheetRepository = localReposi
     return newId;
   }, []);
 
+  const deleteCards = useCallback((ids: string[]) => {
+    const idSet = new Set(ids);
+    if (idSet.size === 0) return;
+    setState((s) => {
+      const nextCardStyles = { ...s.cardStyles };
+      for (const id of Array.from(idSet)) {
+        delete nextCardStyles[id];
+        delete styleBaselinesRef.current.cards[id];
+      }
+      return {
+        ...s,
+        cards: s.cards.filter((c) => !idSet.has(c.id)),
+        cardStyles: nextCardStyles,
+      };
+    });
+  }, []);
+
   const updateStyleForTarget = useCallback(
     (target: SheetStyleTarget, patch: Partial<ProductSheetStyleConfig>) => {
       setState((s) => {
@@ -320,6 +337,7 @@ export function useProductSheet(repository: ProductSheetRepository = localReposi
     updateCard,
     updateCards,
     cloneCardAfter,
+    deleteCards,
     updateStyleForTarget,
     resetStyleForTarget,
     clearBrandStyleOverride,

@@ -133,6 +133,12 @@ export function normalizeCardStyles(
     if (patch.headerRowHeight === 25 || patch.headerRowHeight === brandBase.headerRowHeight) {
       delete (patch as Partial<ProductSheetStyleConfig>).headerRowHeight;
     }
+    if (patch.borderWidth === 5 || patch.borderWidth === 6) {
+      delete (patch as Partial<ProductSheetStyleConfig>).borderWidth;
+      if (!patch.borderColor || patch.borderColor === "#f6f7f9") {
+        delete (patch as Partial<ProductSheetStyleConfig>).borderColor;
+      }
+    }
     if (Object.keys(patch).length > 0) out[cardId] = patch;
   }
   return out;

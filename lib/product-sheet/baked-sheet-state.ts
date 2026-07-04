@@ -13,11 +13,10 @@ export const INITIAL_BRAND_STYLES: Record<string, ProductSheetStyleConfig> = {
 
 export const INITIAL_CARD_STYLES: Record<string, ProductSheetStyleConfig> = {
   "sheet-32": {
-    "height": 170
+    "height": 150
   } as ProductSheetStyleConfig,
   "sheet-22": {
     "borderRadius": 7.5,
-    "borderWidth": 5,
     "brandFontSize": 12.5,
     "lineFontSize": 12.5,
     "bottomFontSize": 6.7,
@@ -42,25 +41,25 @@ export const INITIAL_CARD_STYLES: Record<string, ProductSheetStyleConfig> = {
     "tagPriceGap": 3
   } as ProductSheetStyleConfig,
   "sheet-28": {
-    "height": 160
+    "height": 141
   } as ProductSheetStyleConfig,
   "sheet-30": {
-    "height": 160
+    "height": 141
   } as ProductSheetStyleConfig,
   "sheet-17": {
-    "height": 160
+    "height": 141
   } as ProductSheetStyleConfig,
   "sheet-53": {
-    "height": 160
+    "height": 141
   } as ProductSheetStyleConfig,
   "sheet-52": {
-    "height": 160
+    "height": 141
   } as ProductSheetStyleConfig,
   "sheet-50": {
-    "height": 188
+    "height": 165
   } as ProductSheetStyleConfig,
   "sheet-47": {
-    "height": 188
+    "height": 165
   } as ProductSheetStyleConfig
 };
 
@@ -71,12 +70,12 @@ export const INITIAL_SHEET_PRESETS: ProductSheetPreset[] = [
     "category": "시트 스타일",
     "style": {
       "cellWidth": 201,
-      "cellHeight": 167,
+      "cellHeight": 147,
       "width": 188,
-      "height": 142,
+      "height": 125,
       "borderRadius": 9,
-      "borderWidth": 6,
-      "borderColor": "#f6f7f9",
+      "borderWidth": 2,
+      "borderColor": "#d1d1d1",
       "backgroundColor": "#ffffff",
       "headerBackgroundColor": "#f6f7f9",
       "dividerColor": "#9aa3af",
@@ -124,12 +123,12 @@ export const INITIAL_SHEET_PRESETS: ProductSheetPreset[] = [
     "category": "시트 스타일",
     "style": {
       "cellWidth": 201,
-      "cellHeight": 167,
+      "cellHeight": 147,
       "width": 188,
-      "height": 170,
+      "height": 150,
       "borderRadius": 9,
-      "borderWidth": 6,
-      "borderColor": "#f6f7f9",
+      "borderWidth": 2,
+      "borderColor": "#d1d1d1",
       "backgroundColor": "#ffffff",
       "headerBackgroundColor": "#f6f7f9",
       "dividerColor": "#9aa3af",
@@ -177,12 +176,12 @@ export const INITIAL_SHEET_PRESETS: ProductSheetPreset[] = [
     "category": "시트 스타일",
     "style": {
       "cellWidth": 201,
-      "cellHeight": 167,
+      "cellHeight": 147,
       "width": 188,
-      "height": 142,
+      "height": 125,
       "borderRadius": 9,
-      "borderWidth": 6,
-      "borderColor": "#f6f7f9",
+      "borderWidth": 2,
+      "borderColor": "#d1d1d1",
       "backgroundColor": "#ffffff",
       "headerBackgroundColor": "#f6f7f9",
       "dividerColor": "#9aa3af",
@@ -230,12 +229,12 @@ export const INITIAL_SHEET_PRESETS: ProductSheetPreset[] = [
     "category": "시트 스타일",
     "style": {
       "cellWidth": 201,
-      "cellHeight": 167,
+      "cellHeight": 147,
       "width": 188,
-      "height": 142,
+      "height": 125,
       "borderRadius": 9,
-      "borderWidth": 6,
-      "borderColor": "#f6f7f9",
+      "borderWidth": 2,
+      "borderColor": "#d1d1d1",
       "backgroundColor": "#ffffff",
       "headerBackgroundColor": "#f6f7f9",
       "dividerColor": "#9aa3af",

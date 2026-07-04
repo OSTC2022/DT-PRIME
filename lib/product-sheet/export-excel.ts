@@ -65,7 +65,7 @@ function addDataSheet(ws: import("exceljs").Worksheet, cards: ProductSheetCardDa
   ws.views = [{ state: "frozen", ySplit: 1, showGridLines: true }];
 }
 
-/** 엑셀 열28·행125.25 기준 3열 카드 그리드 */
+/** 엑셀 열28·행110 기준 3열 카드 그리드 */
 function layoutCardSheet(ws: import("exceljs").Worksheet, rowCount: number) {
   for (let c = 0; c < SHEET_EXPORT_CARDS_PER_ROW; c++) {
     ws.getColumn(c + 1).width = EXCEL_COL_WIDTH;

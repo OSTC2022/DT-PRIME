@@ -48,7 +48,7 @@ import { useProductSheetExcelExport } from "@/components/product-sheet/product-s
 import { printProductSheetA4 } from "@/lib/product-sheet/print-a4";
 
 import { toast } from "sonner";
-import { Copy } from "lucide-react";
+import { Copy, MousePointerClick, Trash2 } from "lucide-react";
 
 function sheetCardSummary(card: ProductSheetCardData) {
   return [card.brand, card.title, card.highlight].filter(Boolean).join(" · ");
@@ -126,6 +126,8 @@ export function ProductSheetManager() {
 
     cloneCardAfter,
 
+    deleteCards,
+
     updateStyleForTarget,
 
     resetStyleForTarget,
@@ -162,6 +164,7 @@ export function ProductSheetManager() {
 
   const [exporting, setExporting] = useState(false);
   const [panelExpandTick, setPanelExpandTick] = useState(0);
+  const [multiSelectMode, setMultiSelectMode] = useState(false);
   const { exportExcel, portal } = useProductSheetExcelExport();
 
 
@@ -256,7 +259,7 @@ export function ProductSheetManager() {
 
   const handleGridCardClick = (card: ProductSheetCardData, e: React.MouseEvent) => {
 
-    const multi = e.ctrlKey || e.metaKey;
+    const multi = multiSelectMode || e.ctrlKey || e.metaKey;
 
 
 
@@ -291,6 +294,23 @@ export function ProductSheetManager() {
     setStyleScope("card");
     setPanelExpandTick((t) => t + 1);
     toast.success(`「${card.title}」 카드를 복제했어요.`);
+  };
+
+  const uniqueSelectionCount = useMemo(() => new Set(selection).size, [selection]);
+
+  const handleDeleteSelected = () => {
+    const uniqueIds = Array.from(new Set(selection));
+    if (uniqueIds.length === 0) {
+      toast.error("삭제할 카드를 그리드에서 선택해 주세요.");
+      return;
+    }
+
+    if (!confirm(`선택한 ${uniqueIds.length}개 카드를 삭제할까요?`)) return;
+
+    deleteCards(uniqueIds);
+    setSelection([]);
+    setFocusId(null);
+    toast.success(`${uniqueIds.length}개 카드를 삭제했어요.`);
   };
 
 
@@ -481,7 +501,8 @@ export function ProductSheetManager() {
               <p className="text-xs text-muted-foreground">
 
                 클릭하면 단일 선택 ·{" "}
-                <kbd className="rounded border px-1 text-[10px]">Ctrl</kbd>+클릭으로 추가 선택 ·
+                <kbd className="rounded border px-1 text-[10px]">Ctrl</kbd>+클릭 또는{" "}
+                <span className="font-semibold">카드 선택</span> 버튼으로 추가 선택 ·
                 카드에 마우스를 올리면 복제 버튼이 나타납니다.
                 {selection.length > 0 ? (
                   <span className="ml-1 font-bold text-primary">
@@ -492,49 +513,60 @@ export function ProductSheetManager() {
 
             </div>
 
-            {selection.length > 0 ? (
+            <div className="flex flex-wrap items-center gap-2">
 
-              <div className="flex flex-wrap items-center gap-2">
+              <Button
+                type="button"
+                variant={multiSelectMode ? "default" : "outline"}
+                size="sm"
+                onClick={() => setMultiSelectMode((v) => !v)}
+                title="Ctrl+클릭과 같이 카드를 누적 선택합니다"
+              >
+                <MousePointerClick className="mr-1.5 size-3.5" />
+                카드 선택{multiSelectMode ? " (켜짐)" : ""}
+              </Button>
 
-                <Button
-                  type="button"
-                  variant="default"
-                  size="sm"
-                  onClick={() => {
-                    const sourceId = focusId ?? selection[selection.length - 1];
-                    const source = cards.find((c) => c.id === sourceId);
-                    if (source) handleCardClone(source);
-                  }}
-                >
-                  <Copy className="mr-1.5 size-3.5" />
-                  카드 복제
-                </Button>
+              {selection.length > 0 ? (
+                <>
+                  <Button
+                    type="button"
+                    variant="default"
+                    size="sm"
+                    onClick={() => {
+                      const sourceId = focusId ?? selection[selection.length - 1];
+                      const source = cards.find((c) => c.id === sourceId);
+                      if (source) handleCardClone(source);
+                    }}
+                  >
+                    <Copy className="mr-1.5 size-3.5" />
+                    카드 복제
+                  </Button>
 
-                <Button
+                  <Button
+                    type="button"
+                    variant="destructive"
+                    size="sm"
+                    onClick={handleDeleteSelected}
+                  >
+                    <Trash2 className="mr-1.5 size-3.5" />
+                    선택 삭제 ({uniqueSelectionCount})
+                  </Button>
 
-                  type="button"
+                  <Button
+                    type="button"
+                    variant="outline"
+                    size="sm"
+                    onClick={() => {
+                      setSelection([]);
+                      setFocusId(null);
+                    }}
+                  >
+                    선택 해제 ({selection.length})
+                  </Button>
+                </>
+              ) : null}
 
-                  variant="outline"
-
-                  size="sm"
-
-                  onClick={() => {
-
-                    setSelection([]);
-
-                    setFocusId(null);
-
-                  }}
-
-                >
-
-                  선택 해제 ({selection.length})
-
-                </Button>
-
-              </div>
-
-            ) : null}
+            </div>
 
           </div>
 

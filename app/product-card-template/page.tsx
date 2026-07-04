@@ -10,7 +10,7 @@ export default function ProductCardTemplatePage() {
       <header className="no-print mb-4">
         <h1 className="text-lg font-black">제품 관리 카드 시트</h1>
         <p className="mt-1 text-sm text-muted-foreground">
-          엑셀 기준 열 너비 28 · 행 높이 125.25 (카드 188×142px) · 한 줄 3열 · 엑셀은 웹 카드
+          엑셀 기준 열 너비 28 · 행 높이 110 (카드 188×125px) · 한 줄 3열 · 엑셀은 웹 카드
           이미지 캡처로 저장합니다. 총 {PRODUCT_SHEET_CARD_COUNT}개({SHEET_COLUMNS}열 그리드).
         </p>
         <p className="mt-1 text-xs text-muted-foreground">
