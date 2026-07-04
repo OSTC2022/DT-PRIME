@@ -54,6 +54,24 @@ function applyDualPriceCardSize(
   });
 }
 
+/** 카드에 width·height 등 크기를 직접 지정했는지 */
+export function hasExplicitSizePatch(patch?: ProductSheetStyleConfig): boolean {
+  if (!patch) return false;
+  return (
+    "height" in patch ||
+    "width" in patch ||
+    "cellHeight" in patch ||
+    "cellWidth" in patch
+  );
+}
+
+export function dualPriceSizePatch(
+  brandBase: ProductSheetStyleConfig,
+  globalStyle: ProductSheetStyleConfig
+): ProductSheetStyleConfig {
+  return pickStyleDiff(brandBase, applyDualPriceCardSize(brandBase, globalStyle));
+}
+
 export function resolveSheetCardStyle(
   card: Pick<ProductSheetCardData, "id" | "brand" | "price" | "bottom">,
   globalStyle: ProductSheetStyleConfig,
@@ -64,7 +82,7 @@ export function resolveSheetCardStyle(
   const patch = cardStyles[card.id];
   let resolved = patch ? mergeSheetStyle(brandBase, patch) : brandBase;
 
-  if (hasDualPriceLines(card.price, card.bottom)) {
+  if (hasDualPriceLines(card.price, card.bottom) && !hasExplicitSizePatch(patch)) {
     resolved = applyDualPriceCardSize(resolved, globalStyle);
   }
 

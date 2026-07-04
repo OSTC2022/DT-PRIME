@@ -3,6 +3,8 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import {
   defaultStyleBaselines,
+  dualPriceSizePatch,
+  hasExplicitSizePatch,
   pickStyleDiff,
   resolveBrandSheetStyle,
   resolveSheetCardStyle,
@@ -11,6 +13,7 @@ import {
 import { cloneSheetCardData } from "./sheet-card-clone";
 import { createSheetPreset, ProductSheetPreset } from "./presets";
 import { SHEET_COLOR_THEMES } from "./colors";
+import { hasDualPriceLines } from "./price-display";
 import { mergeSheetStyle, ProductSheetStyleConfig } from "./styles";
 import { ProductSheetCardData } from "./types";
 import { SheetColorKey } from "./types";
@@ -81,10 +84,38 @@ export function useProductSheet(repository: ProductSheetRepository = localReposi
     repository.save(state);
   }, [state, repository]);
 
+  const applyDualPriceDefaults = (
+    s: ProductSheetState,
+    ids: string[],
+    patch: Partial<ProductSheetCardData>
+  ): Record<string, ProductSheetStyleConfig> => {
+    if (!("price" in patch) && !("bottom" in patch)) return s.cardStyles;
+
+    let nextCardStyles = s.cardStyles;
+    for (const id of ids) {
+      const source = s.cards.find((c) => c.id === id);
+      if (!source) continue;
+      const updated = { ...source, ...patch };
+      if (!hasDualPriceLines(updated.price, updated.bottom)) continue;
+      if (hasExplicitSizePatch(s.cardStyles[id])) continue;
+
+      const brandBase = resolveBrandSheetStyle(updated.brand, s.globalStyle, s.brandStyles);
+      const sizePatch = dualPriceSizePatch(brandBase, s.globalStyle);
+      if (Object.keys(sizePatch).length === 0) continue;
+
+      nextCardStyles = {
+        ...nextCardStyles,
+        [id]: { ...(nextCardStyles[id] ?? {}), ...sizePatch },
+      };
+    }
+    return nextCardStyles;
+  };
+
   const updateCard = useCallback((id: string, patch: Partial<ProductSheetCardData>) => {
     setState((s) => ({
       ...s,
       cards: s.cards.map((c) => (c.id === id ? { ...c, ...patch, id } : c)),
+      cardStyles: applyDualPriceDefaults(s, [id], patch),
     }));
   }, []);
 
@@ -93,6 +124,7 @@ export function useProductSheet(repository: ProductSheetRepository = localReposi
     setState((s) => ({
       ...s,
       cards: s.cards.map((c) => (idSet.has(c.id) ? { ...c, ...patch, id: c.id } : c)),
+      cardStyles: applyDualPriceDefaults(s, ids, patch),
     }));
   }, []);
 
