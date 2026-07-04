@@ -4,7 +4,7 @@ import os from "os";
 import { ClassicLevel } from "classic-level";
 
 const ORIGIN = process.env.SHEET_ORIGIN ?? "dt-prime.vercel.app";
-const STORAGE_KEY = "product-sheet-state-v2";
+const STORAGE_KEY = "product-card-template-v4";
 
 const DEFAULT_ROOTS = [
   {

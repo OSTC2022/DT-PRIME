@@ -60,7 +60,7 @@ await db.open();
 
 for await (const [k, v] of db.iterator()) {
   const ks = k.toString("utf8");
-  if (!ks.includes("product-sheet-state-v2")) continue;
+  if (!ks.includes("product-card-template-v4")) continue;
 
   let body = v;
   if (v[0] === 0x01) body = v.subarray(1);

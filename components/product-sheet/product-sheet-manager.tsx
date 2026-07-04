@@ -2,7 +2,7 @@
 
 
 
-import { useMemo, useState, useEffect } from "react";
+import { useCallback, useMemo, useState, useEffect } from "react";
 
 import { ProductSheetBulkEditor } from "@/components/product-sheet/product-sheet-bulk-editor";
 
@@ -19,8 +19,6 @@ import {
   ProductSheetToolbar,
 
 } from "@/components/product-sheet/product-sheet-toolbar";
-
-import { PRODUCT_SHEET_CARD_COUNT } from "@/lib/product-sheet/initial-data";
 
 import { resolveSelectedCards, SheetSelection } from "@/lib/product-sheet/selection";
 
@@ -46,6 +44,14 @@ import { Button } from "@/components/ui/button";
 
 import { useProductSheetExcelExport } from "@/components/product-sheet/product-sheet-excel-export";
 import { printProductSheetA4 } from "@/lib/product-sheet/print-a4";
+import {
+  exportProductCardTemplateBackup,
+  downloadProductCardTemplateBackup,
+  importProductCardTemplateBackup,
+  ImportBackupError,
+  loadProductSheetUiState,
+} from "@/lib/product-sheet/sheet-backup";
+import { persistScreenState, hasCurrentVersionStorage } from "@/lib/product-sheet/sheet-storage";
 
 import { toast } from "sonner";
 import { Copy, MousePointerClick, Trash2 } from "lucide-react";
@@ -108,6 +114,11 @@ function SheetEditPanelNav({
   );
 }
 
+function readInitialUiState() {
+  if (typeof window === "undefined") return null;
+  return loadProductSheetUiState();
+}
+
 export function ProductSheetManager() {
 
   const {
@@ -148,24 +159,79 @@ export function ProductSheetManager() {
 
     resetToInitial,
 
+    clearSavedData,
+
   } = useProductSheet();
+
+  const savedUi = readInitialUiState();
 
   const [editBrand, setEditBrand] = useState<string | null>(null);
 
   const [styleScope, setStyleScope] = useState<SheetStyleScope>("global");
 
-  const [filters, setFilters] = useState<ProductSheetFilters>({ query: "", brand: "", color: "" });
+  const [filters, setFilters] = useState<ProductSheetFilters>(
+    () => savedUi?.filters ?? { query: "", brand: "", color: "" }
+  );
 
-  const [selection, setSelection] = useState<SheetSelection>([]);
+  const [selection, setSelection] = useState<SheetSelection>(() => savedUi?.selection ?? []);
 
   const [focusId, setFocusId] = useState<string | null>(null);
 
-  const [exportScope, setExportScope] = useState<ProductSheetExportScope>("all");
+  const [exportScope, setExportScope] = useState<ProductSheetExportScope>(
+    () => savedUi?.exportScope ?? "all"
+  );
 
   const [exporting, setExporting] = useState(false);
   const [panelExpandTick, setPanelExpandTick] = useState(0);
-  const [multiSelectMode, setMultiSelectMode] = useState(false);
+  const [multiSelectMode, setMultiSelectMode] = useState(() => savedUi?.multiSelectMode ?? false);
   const { exportExcel, portal } = useProductSheetExcelExport();
+
+  const [usingSavedData, setUsingSavedData] = useState(false);
+
+  useEffect(() => {
+    setUsingSavedData(hasCurrentVersionStorage());
+  }, []);
+
+  const handleExportBackup = useCallback(() => {
+    const backup = exportProductCardTemplateBackup({
+      state: { cards, globalStyle, brandStyles, cardStyles, presets },
+      ui: { filters, selection, exportScope, multiSelectMode },
+    });
+    downloadProductCardTemplateBackup(backup);
+    toast.success(`저장 데이터 ${backup.data.cards.length}개 카드를 JSON으로 보냈어요.`);
+  }, [cards, globalStyle, brandStyles, cardStyles, presets, filters, selection, exportScope, multiSelectMode]);
+
+  const handleImportBackup = useCallback(async (file: File) => {
+    if (!confirm("기존 브라우저 저장 데이터를 덮어쓸까요?")) {
+      return;
+    }
+    try {
+      const text = await file.text();
+      importProductCardTemplateBackup(text);
+      alert("가져오기 완료");
+      window.location.reload();
+    } catch (error) {
+      if (error instanceof ImportBackupError) {
+        if (error.code === "parse") {
+          toast.error("JSON 파일 형식이 올바르지 않습니다.");
+          return;
+        }
+        toast.error(error.message);
+        return;
+      }
+      console.error("[product-card-template import] unexpected error:", error);
+      toast.error("가져오기에 실패했습니다.");
+    }
+  }, []);
+
+  const handleSaveWithUi = useCallback(() => {
+    persistScreenState(
+      { cards, globalStyle, brandStyles, cardStyles, presets },
+      { filters, selection, exportScope, multiSelectMode },
+      { force: true }
+    );
+    toast.success("현재 화면 상태를 브라우저에 저장했어요.");
+  }, [cards, globalStyle, brandStyles, cardStyles, presets, filters, selection, exportScope, multiSelectMode]);
 
 
 
@@ -435,7 +501,7 @@ export function ProductSheetManager() {
 
         colors={colors}
 
-        total={PRODUCT_SHEET_CARD_COUNT}
+        total={cards.length}
 
         visible={filtered.length}
 
@@ -447,17 +513,51 @@ export function ProductSheetManager() {
 
         onChange={(patch) => setFilters((f) => ({ ...f, ...patch }))}
 
-        onReset={() => {
+        onSave={handleSaveWithUi}
 
-          if (confirm("카드·스타일을 저장된 상태로 되돌릴까요?")) {
+        onExportBackup={handleExportBackup}
+
+        onImportBackup={handleImportBackup}
+
+        onResetToDefaults={() => {
+
+          if (
+            confirm(
+              "카드·스타일을 코드에 포함된 최신 기본값으로 초기화하고 브라우저에 저장할까요?"
+            )
+          ) {
 
             resetToInitial();
+
+            setFilters({ query: "", brand: "", color: "" });
 
             setSelection([]);
 
             setFocusId(null);
 
-            toast.success("저장된 카드 목록으로 복원했어요.");
+            setExportScope("all");
+
+            setMultiSelectMode(false);
+
+            toast.success("최신 기본값으로 초기화했어요.");
+
+          }
+
+        }}
+
+        onClearSaved={() => {
+
+          if (
+            confirm(
+              "브라우저에 저장된 제품 카드 데이터를 삭제할까요?\n\n삭제 후에는 코드 기본값이 표시됩니다."
+            )
+          ) {
+
+            clearSavedData();
+
+            toast.success("저장 데이터를 삭제했어요. 페이지를 새로고침합니다.");
+
+            window.location.reload();
 
           }
 
@@ -470,6 +570,12 @@ export function ProductSheetManager() {
         exporting={exporting}
 
       />
+
+      <p className="no-print -mt-2 mb-4 text-[10px] text-muted-foreground">
+        {usingSavedData ?
+          "현재 브라우저에 저장된 사용자 데이터를 표시 중입니다."
+        : "저장 데이터 없음 — 코드에 포함된 최신 기본값을 표시 중입니다."}
+      </p>
 
 
 

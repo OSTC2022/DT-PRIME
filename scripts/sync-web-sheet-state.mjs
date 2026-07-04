@@ -124,8 +124,7 @@ async function writeLocalStorage(state) {
   await db.open();
   try {
     for (const origin of LOCAL_ORIGINS) {
-      await db.put(storageKey(origin, "product-sheet-state-v2"), value);
-      await db.put(storageKey(origin, "product-sheet-state-v2-backup"), value);
+      await db.put(storageKey(origin, "product-card-template-v4"), value);
       console.log("seeded", origin);
     }
   } finally {

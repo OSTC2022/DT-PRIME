@@ -7,7 +7,7 @@ if (!file) {
   process.exit(1);
 }
 
-const KEY = Buffer.from("product-sheet-state-v2", "utf8");
+const KEY = Buffer.from("product-card-template-v4", "utf8");
 const JSON_START = Buffer.from('{"cards"', "utf16le");
 
 function parseJsonFromUtf16(text) {

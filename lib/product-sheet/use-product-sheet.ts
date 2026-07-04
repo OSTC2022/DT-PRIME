@@ -19,15 +19,21 @@ import { ProductSheetCardData } from "./types";
 import { SheetColorKey } from "./types";
 import {
   cloneStateBaselines,
+  clearLegacyStorage,
+  clearStoredProductSheetState,
   createInitialState,
+  hasCurrentVersionStorage,
   loadProductSheetState,
   markSheetStorageReady,
+  MIGRATION_DISMISS_KEY,
   ProductSheetRepository,
   ProductSheetState,
+  readLegacyStoredState,
   resetStoredProductSheetState,
   saveProductSheetState,
   StyleBaselines,
 } from "./sheet-storage";
+import { toast } from "sonner";
 
 export type { ProductSheetRepository, ProductSheetState, StyleBaselines, SheetStyleTarget };
 
@@ -62,6 +68,7 @@ function resolveStyleForTarget(state: ProductSheetState, target: SheetStyleTarge
 export function useProductSheet(repository: ProductSheetRepository = localRepository) {
   const [state, setState] = useState<ProductSheetState>(createInitialState);
   const hydrated = useRef(false);
+  const migrationChecked = useRef(false);
   const skipSaveRef = useRef(true);
   const styleBaselinesRef = useRef<StyleBaselines>(defaultStyleBaselines());
 
@@ -74,6 +81,35 @@ export function useProductSheet(repository: ProductSheetRepository = localReposi
     setState(loaded);
     markSheetStorageReady();
   }, [repository]);
+
+  useEffect(() => {
+    if (!hydrated.current || migrationChecked.current) return;
+    if (typeof window === "undefined") return;
+    migrationChecked.current = true;
+
+    if (hasCurrentVersionStorage()) return;
+    if (sessionStorage.getItem(MIGRATION_DISMISS_KEY)) return;
+
+    const legacy = readLegacyStoredState();
+    if (!legacy) return;
+
+    const restore = confirm(
+      "이전에 저장한 제품 카드 데이터가 있습니다.\n\n확인: 이전 데이터 불러오기\n취소: 최신 기본 데이터 유지"
+    );
+    if (restore) {
+      styleBaselinesRef.current = cloneStateBaselines(legacy);
+      setState(legacy);
+      markSheetStorageReady();
+      saveProductSheetState(legacy);
+      clearLegacyStorage();
+      skipSaveRef.current = true;
+      toast.success("이전 저장 데이터를 불러왔어요.");
+      return;
+    }
+
+    sessionStorage.setItem(MIGRATION_DISMISS_KEY, "1");
+    clearLegacyStorage();
+  }, []);
 
   useEffect(() => {
     if (!hydrated.current) return;
@@ -317,6 +353,17 @@ export function useProductSheet(repository: ProductSheetRepository = localReposi
     skipSaveRef.current = true;
   }, []);
 
+  const clearSavedData = useCallback(() => {
+    clearStoredProductSheetState();
+  }, []);
+
+  const saveCurrentState = useCallback(() => {
+    markSheetStorageReady();
+    saveProductSheetState(state);
+    skipSaveRef.current = true;
+    toast.success("현재 상태를 저장했어요.");
+  }, [state]);
+
   const resolveBrandStyle = useCallback(
     (brand: string) => resolveBrandSheetStyle(brand, state.globalStyle, state.brandStyles),
     [state.globalStyle, state.brandStyles]
@@ -348,6 +395,8 @@ export function useProductSheet(repository: ProductSheetRepository = localReposi
     removePreset,
     applyPreset,
     resetToInitial,
+    clearSavedData,
+    saveCurrentState,
   };
 }
 
