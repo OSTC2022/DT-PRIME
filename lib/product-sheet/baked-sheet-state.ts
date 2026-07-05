@@ -11,57 +11,7 @@ export const INITIAL_BRAND_STYLES: Record<string, ProductSheetStyleConfig> = {
   } as ProductSheetStyleConfig
 };
 
-export const INITIAL_CARD_STYLES: Record<string, ProductSheetStyleConfig> = {
-  "sheet-32": {
-    "height": 150
-  } as ProductSheetStyleConfig,
-  "sheet-22": {
-    "borderRadius": 7.5,
-    "brandFontSize": 12.5,
-    "lineFontSize": 12.5,
-    "bottomFontSize": 6.7,
-    "headerRowHeight": 20.9,
-    "bodyPaddingX": 12.5,
-    "bodyPaddingY": 6.7,
-    "bodyPaddingTop": 4.2,
-    "accentLineWidth": 1.7,
-    "lineAccentPercent": -3,
-    "titleMarginBottom": 4.2,
-    "dividerMarginBottom": 3.3,
-    "tagLineGap": 1.7,
-    "tagPriceGap": 1.7
-  } as ProductSheetStyleConfig,
-  "sheet-23": {
-    "bodyPaddingTop": 2,
-    "titleMarginBottom": 0,
-    "dividerMarginBottom": 2,
-    "tagPriceGap": 0
-  } as ProductSheetStyleConfig,
-  "sheet-1": {
-    "tagPriceGap": 3
-  } as ProductSheetStyleConfig,
-  "sheet-28": {
-    "height": 141
-  } as ProductSheetStyleConfig,
-  "sheet-30": {
-    "height": 141
-  } as ProductSheetStyleConfig,
-  "sheet-17": {
-    "height": 141
-  } as ProductSheetStyleConfig,
-  "sheet-53": {
-    "height": 141
-  } as ProductSheetStyleConfig,
-  "sheet-52": {
-    "height": 141
-  } as ProductSheetStyleConfig,
-  "sheet-50": {
-    "height": 165
-  } as ProductSheetStyleConfig,
-  "sheet-47": {
-    "height": 165
-  } as ProductSheetStyleConfig
-};
+export const INITIAL_CARD_STYLES: Record<string, ProductSheetStyleConfig> = {};
 
 export const INITIAL_SHEET_PRESETS: ProductSheetPreset[] = [
   {
