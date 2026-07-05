@@ -16,6 +16,7 @@ import {
   ProductSheetUiState,
   snapshotFromScreen,
 } from "./sheet-snapshot";
+import { setSyncMeta } from "./sheet-cloud-sync";
 
 export type { ProductSheetUiState, ProductCardTemplateSnapshot } from "./sheet-snapshot";
 export {
@@ -152,6 +153,11 @@ export function importProductCardTemplateBackup(json: string): ProductCardTempla
   clearLegacyStorage();
   sessionStorage.removeItem("product-card-template-v4-migration-dismissed");
   persistSnapshot(snapshot, { force: true });
+  if (isRecord(parsed) && typeof parsed.exportedAt === "string") {
+    setSyncMeta(parsed.exportedAt);
+  } else {
+    setSyncMeta(new Date().toISOString());
+  }
   logSnapshotVerification("import", snapshot);
 
   return snapshot;

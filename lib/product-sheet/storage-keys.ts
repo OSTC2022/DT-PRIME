@@ -21,6 +21,9 @@ export const LEGACY_STORAGE_KEYS = [
 
 export const MIGRATION_DISMISS_KEY = "product-card-template-v4-migration-dismissed";
 
+/** 마지막으로 클라우드와 맞춘 시각 (명시적 저장·가져오기 시 갱신) */
+export const SYNC_META_KEY = "product-card-template-v4-sync-meta";
+
 /** @deprecated 단일 key로 통합됨 */
 export const STORAGE_BACKUP_KEY = "product-card-template-v3-backup";
 

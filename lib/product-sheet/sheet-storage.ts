@@ -29,6 +29,7 @@ import {
   STORAGE_KEY,
   UI_STORAGE_KEY,
 } from "./storage-keys";
+import { clearSyncMeta } from "./sheet-cloud-sync";
 
 export {
   BACKUP_FILE_VERSION,
@@ -268,6 +269,7 @@ export function clearStoredProductSheetState() {
   if (typeof window === "undefined") return;
   localStorage.removeItem(PRODUCT_CARD_TEMPLATE_STORAGE_KEY);
   clearLegacyStorage();
+  clearSyncMeta();
   sessionStorage.removeItem(MIGRATION_DISMISS_KEY);
 }
 

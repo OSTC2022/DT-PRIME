@@ -51,7 +51,10 @@ import {
   ImportBackupError,
   loadProductSheetUiState,
 } from "@/lib/product-sheet/sheet-backup";
-import { persistScreenState, hasCurrentVersionStorage } from "@/lib/product-sheet/sheet-storage";
+import { hasCurrentVersionStorage } from "@/lib/product-sheet/sheet-storage";
+import { uploadCloudBackup } from "@/lib/product-sheet/sheet-cloud-client";
+import { setSyncMeta } from "@/lib/product-sheet/sheet-cloud-sync";
+import { useCloudSheetSync } from "@/lib/product-sheet/use-cloud-sheet-sync";
 
 import { toast } from "sonner";
 import { Copy, MousePointerClick, Trash2 } from "lucide-react";
@@ -163,6 +166,8 @@ export function ProductSheetManager() {
 
   } = useProductSheet();
 
+  useCloudSheetSync();
+
   const savedUi = readInitialUiState();
 
   const [editBrand, setEditBrand] = useState<string | null>(null);
@@ -207,8 +212,14 @@ export function ProductSheetManager() {
     }
     try {
       const text = await file.text();
+      const parsed = JSON.parse(text.trim().replace(/^\uFEFF/, ""));
       importProductCardTemplateBackup(text);
-      alert("가져오기 완료");
+      const cloud = await uploadCloudBackup(parsed);
+      if (cloud.ok) {
+        toast.success("가져오기 완료. 클라우드에도 반영했어요.");
+      } else {
+        toast.success("가져오기 완료 (클라우드 미연결)");
+      }
       window.location.reload();
     } catch (error) {
       if (error instanceof ImportBackupError) {
@@ -224,13 +235,25 @@ export function ProductSheetManager() {
     }
   }, []);
 
-  const handleSaveWithUi = useCallback(() => {
-    persistScreenState(
-      { cards, globalStyle, brandStyles, cardStyles, presets },
-      { filters, selection, exportScope, multiSelectMode },
-      { force: true }
-    );
-    toast.success("현재 화면 상태를 브라우저에 저장했어요.");
+  const handleSaveWithUi = useCallback(async () => {
+    const backup = exportProductCardTemplateBackup({
+      state: { cards, globalStyle, brandStyles, cardStyles, presets },
+      ui: { filters, selection, exportScope, multiSelectMode },
+      source: "explicit-save",
+    });
+    setSyncMeta(backup.exportedAt);
+    setUsingSavedData(true);
+
+    const cloud = await uploadCloudBackup(backup);
+    if (cloud.ok) {
+      toast.success("저장했어요. 다른 노트북·브라우저에서도 동일하게 보입니다.");
+      return;
+    }
+    if (!cloud.configured) {
+      toast.success("브라우저에 저장했어요. (배포 환경에서 클라우드 연결 후 기기 간 동기화 가능)");
+      return;
+    }
+    toast.warning(`브라우저에는 저장됐지만 클라우드 동기화 실패: ${cloud.message}`);
   }, [cards, globalStyle, brandStyles, cardStyles, presets, filters, selection, exportScope, multiSelectMode]);
 
 
