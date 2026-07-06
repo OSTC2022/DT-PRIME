@@ -28,7 +28,7 @@ export const SYNC_META_KEY = "product-card-template-v4-sync-meta";
 export const BASELINE_STORAGE_KEY = `product-card-template-v${PRODUCT_CARD_TEMPLATE_STORAGE_VERSION}-baseline`;
 
 /** public/product-card-template-default.json 시드 적용 버전 */
-export const SHEET_SEED_VERSION = 1;
+export const SHEET_SEED_VERSION = 2;
 export const SHEET_SEED_VERSION_KEY = `product-card-template-v${PRODUCT_CARD_TEMPLATE_STORAGE_VERSION}-seed`;
 
 /** @deprecated 단일 key로 통합됨 */

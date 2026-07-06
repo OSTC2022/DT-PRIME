@@ -198,12 +198,11 @@ export function normalizeLoadedState(parsed: Partial<ProductSheetState>): Produc
 
 export function createInitialState(): ProductSheetState {
   const globalStyle = createDefaultSheetStyle();
-  const brandStyles = normalizeBrandStyles(INITIAL_BRAND_STYLES, globalStyle);
   return {
     cards: INITIAL_PRODUCT_SHEET_CARDS,
     globalStyle,
-    brandStyles,
-    cardStyles: normalizeCardStyles(INITIAL_CARD_STYLES, globalStyle, brandStyles, INITIAL_PRODUCT_SHEET_CARDS),
+    brandStyles: { ...INITIAL_BRAND_STYLES },
+    cardStyles: { ...INITIAL_CARD_STYLES },
     presets: [...INITIAL_SHEET_PRESETS],
   };
 }
