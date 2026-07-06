@@ -32,7 +32,6 @@ import {
   collectSheetColors,
 
   filterProductSheetCards,
-  sortProductSheetCards,
 
   ProductSheetFilters,
 
@@ -51,7 +50,7 @@ import {
   ImportBackupError,
   loadProductSheetUiState,
 } from "@/lib/product-sheet/sheet-backup";
-import { hasCurrentVersionStorage } from "@/lib/product-sheet/sheet-storage";
+import { hasCurrentVersionStorage, saveBaselineFromScreen } from "@/lib/product-sheet/sheet-storage";
 import { uploadCloudBackup } from "@/lib/product-sheet/sheet-cloud-client";
 import { setSyncMeta } from "@/lib/product-sheet/sheet-cloud-sync";
 import { useCloudSheetSync } from "@/lib/product-sheet/use-cloud-sheet-sync";
@@ -243,14 +242,18 @@ export function ProductSheetManager() {
     });
     setSyncMeta(backup.exportedAt);
     setUsingSavedData(true);
+    saveBaselineFromScreen(
+      { cards, globalStyle, brandStyles, cardStyles, presets },
+      { filters, selection, exportScope, multiSelectMode }
+    );
 
     const cloud = await uploadCloudBackup(backup);
     if (cloud.ok) {
-      toast.success("저장했어요. 다른 노트북·브라우저에서도 동일하게 보입니다.");
+      toast.success("저장했어요. 초기화 시 이 화면 그대로 돌아옵니다.");
       return;
     }
     if (!cloud.configured) {
-      toast.success("브라우저에 저장했어요. (배포 환경에서 클라우드 연결 후 기기 간 동기화 가능)");
+      toast.success("브라우저에 저장했어요. 초기화 시 이 화면 그대로 돌아옵니다.");
       return;
     }
     toast.warning(`브라우저에는 저장됐지만 클라우드 동기화 실패: ${cloud.message}`);
@@ -259,7 +262,7 @@ export function ProductSheetManager() {
 
 
   const filtered = useMemo(
-    () => sortProductSheetCards(filterProductSheetCards(cards, filters)),
+    () => filterProductSheetCards(cards, filters),
     [cards, filters]
   );
 
@@ -546,7 +549,7 @@ export function ProductSheetManager() {
 
           if (
             confirm(
-              "카드·스타일을 코드에 포함된 최신 기본값으로 초기화하고 브라우저에 저장할까요?"
+              "마지막으로 「저장」한 화면(글씨·카드 크기 포함)으로 되돌릴까요?\n\n저장한 적이 없으면 코드 기본값이 적용됩니다."
             )
           ) {
 

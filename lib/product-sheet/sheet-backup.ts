@@ -8,6 +8,7 @@ import {
   markSheetStorageReady,
   persistSnapshot,
   ProductSheetState,
+  saveBaselineSnapshot,
 } from "./sheet-storage";
 import {
   logSnapshotVerification,
@@ -153,6 +154,7 @@ export function importProductCardTemplateBackup(json: string): ProductCardTempla
   clearLegacyStorage();
   sessionStorage.removeItem("product-card-template-v4-migration-dismissed");
   persistSnapshot(snapshot, { force: true });
+  saveBaselineSnapshot(snapshot);
   if (isRecord(parsed) && typeof parsed.exportedAt === "string") {
     setSyncMeta(parsed.exportedAt);
   } else {

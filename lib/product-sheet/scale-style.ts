@@ -84,23 +84,15 @@ export function resolveScaledStyle(style: ProductSheetStyleConfig): ProductSheet
   return scaleNumericFields(style, scale);
 }
 
-/** 모서리 드래그·크기 입력 시 글씨까지 함께 비율 조절 */
+/** 모서리 드래그·크기 입력 — 카드 크기만 변경 (글씨 크기는 유지) */
 export function applySheetDimensions(
   style: ProductSheetStyleConfig,
   width: number,
   height: number
 ): ProductSheetStyleConfig {
-  const nextW = Math.round(Math.max(100, width));
-  const nextH = Math.round(Math.max(90, height));
-  const scale = Math.min(nextW / style.width, nextH / style.height);
-
-  if (Math.abs(scale - 1) < 0.001) {
-    return { ...style, width: nextW, height: nextH };
-  }
-
   return {
-    ...scaleNumericFields(style, scale),
-    width: nextW,
-    height: nextH,
+    ...style,
+    width: Math.round(Math.max(100, width)),
+    height: Math.round(Math.max(90, height)),
   };
 }

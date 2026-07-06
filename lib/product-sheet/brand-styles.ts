@@ -5,7 +5,7 @@ import {
   ProductSheetStyleConfig,
 } from "./styles";
 import { hasDualPriceLines } from "./price-display";
-import { ProductSheetCardData, SHEET_CARD_HEIGHT_DUAL, SHEET_CARD_WIDTH } from "./types";
+import { ProductSheetCardData, SHEET_CARD_HEIGHT, SHEET_CARD_HEIGHT_DUAL } from "./types";
 
 /** 일괄 편집에서 '전체' 선택 시 null */
 export type BrandStyleTarget = string | null;
@@ -46,10 +46,11 @@ function applyDualPriceCardSize(
   style: ProductSheetStyleConfig,
   base: ProductSheetStyleConfig
 ): ProductSheetStyleConfig {
-  const cellHeight = Math.round((base.cellHeight * SHEET_CARD_HEIGHT_DUAL) / base.height);
+  const height = Math.round((base.height * SHEET_CARD_HEIGHT_DUAL) / SHEET_CARD_HEIGHT);
+  const cellHeight = Math.round((base.cellHeight * height) / base.height);
   return mergeSheetStyle(style, {
-    width: SHEET_CARD_WIDTH,
-    height: SHEET_CARD_HEIGHT_DUAL,
+    width: base.width,
+    height,
     cellHeight,
   });
 }

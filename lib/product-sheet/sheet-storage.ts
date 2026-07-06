@@ -22,6 +22,7 @@ import {
 } from "./sheet-snapshot";
 import type { ProductSheetUiState } from "./sheet-snapshot";
 import {
+  BASELINE_STORAGE_KEY,
   LEGACY_STORAGE_KEYS,
   MIGRATION_DISMISS_KEY,
   PRODUCT_CARD_TEMPLATE_STORAGE_KEY,
@@ -29,10 +30,11 @@ import {
   STORAGE_KEY,
   UI_STORAGE_KEY,
 } from "./storage-keys";
-import { clearSyncMeta } from "./sheet-cloud-sync";
+import { clearSyncMeta, setSyncMeta } from "./sheet-cloud-sync";
 
 export {
   BACKUP_FILE_VERSION,
+  BASELINE_STORAGE_KEY,
   LEGACY_STORAGE_KEYS,
   MIGRATION_DISMISS_KEY,
   PRODUCT_CARD_TEMPLATE_STORAGE_KEY,
@@ -254,20 +256,62 @@ export function persistScreenState(
   persistSnapshot(snapshotFromScreen(state, ui), options);
 }
 
+function cloneSnapshot(snapshot: ProductCardTemplateSnapshot): ProductCardTemplateSnapshot {
+  return JSON.parse(JSON.stringify(snapshot)) as ProductCardTemplateSnapshot;
+}
+
+/** 「저장」 시 기록 — 초기화가 이 스냅샷을 그대로 복원 (글씨·크기 재계산 없음) */
+export function saveBaselineSnapshot(snapshot: ProductCardTemplateSnapshot) {
+  if (typeof window === "undefined") return;
+  try {
+    localStorage.setItem(BASELINE_STORAGE_KEY, JSON.stringify(cloneSnapshot(snapshot)));
+  } catch {
+    /* quota */
+  }
+}
+
+export function loadBaselineSnapshot(): ProductCardTemplateSnapshot | null {
+  if (typeof window === "undefined") return null;
+  return tryParseSnapshotRaw(localStorage.getItem(BASELINE_STORAGE_KEY));
+}
+
+export function hasBaselineSnapshot(): boolean {
+  if (typeof window === "undefined") return false;
+  return !!localStorage.getItem(BASELINE_STORAGE_KEY);
+}
+
+export function saveBaselineFromScreen(state: ProductSheetState, ui: ProductSheetUiState) {
+  const snapshot = snapshotFromScreen(state, ui);
+  saveBaselineSnapshot(snapshot);
+  return snapshot;
+}
+
 export function resetStoredProductSheetState(): ProductSheetState {
-  const initial = createInitialState();
   markSheetStorageReady();
   clearLegacyStorage();
   if (typeof window !== "undefined") {
     sessionStorage.removeItem(MIGRATION_DISMISS_KEY);
   }
+
+  const baseline = loadBaselineSnapshot();
+  if (baseline) {
+    const restored = cloneSnapshot(baseline);
+    restored.ui = { ...DEFAULT_UI_STATE };
+    persistSnapshot(restored, { force: true });
+    setSyncMeta(new Date().toISOString());
+    return stateFromSnapshot(restored);
+  }
+
+  const initial = createInitialState();
   persistSnapshot(snapshotFromScreen(initial, { ...DEFAULT_UI_STATE }), { force: true });
+  setSyncMeta(new Date().toISOString());
   return initial;
 }
 
 export function clearStoredProductSheetState() {
   if (typeof window === "undefined") return;
   localStorage.removeItem(PRODUCT_CARD_TEMPLATE_STORAGE_KEY);
+  localStorage.removeItem(BASELINE_STORAGE_KEY);
   clearLegacyStorage();
   clearSyncMeta();
   sessionStorage.removeItem(MIGRATION_DISMISS_KEY);

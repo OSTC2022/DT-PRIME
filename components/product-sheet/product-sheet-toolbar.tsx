@@ -105,9 +105,8 @@ export function ProductSheetToolbar({
         <div className="mb-2">
           <h3 className="text-xs font-black">저장 데이터 동기화</h3>
           <p className="text-[10px] text-muted-foreground">
-            「저장」을 누르면 클라우드에도 올라가 다른 노트북에서도 같은 화면이 보입니다. 웹과
-            로컬(localhost) 브라우저 저장소는 분리되므로, JSON 보내기·가져오기로도 맞출 수
-            있습니다.
+            「저장」= 초기화 기준점(글씨·카드 크기 그대로). 「최신 기본값으로 초기화」는 마지막 저장
+            상태로 되돌립니다. JSON 보내기·가져오기로 다른 PC와 맞출 수 있습니다.
           </p>
         </div>
         <div className="flex flex-wrap gap-2">
