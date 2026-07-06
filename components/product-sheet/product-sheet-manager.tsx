@@ -53,6 +53,7 @@ import {
 import { hasCurrentVersionStorage, saveBaselineFromScreen } from "@/lib/product-sheet/sheet-storage";
 import { uploadCloudBackup } from "@/lib/product-sheet/sheet-cloud-client";
 import { setSyncMeta } from "@/lib/product-sheet/sheet-cloud-sync";
+import { useSheetSeed } from "@/lib/product-sheet/use-sheet-seed";
 import { useCloudSheetSync } from "@/lib/product-sheet/use-cloud-sheet-sync";
 
 import { toast } from "sonner";
@@ -165,6 +166,7 @@ export function ProductSheetManager() {
 
   } = useProductSheet();
 
+  useSheetSeed();
   useCloudSheetSync();
 
   const savedUi = readInitialUiState();
