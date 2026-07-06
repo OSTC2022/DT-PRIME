@@ -1,12 +1,12 @@
 {
   "version": 4,
-  "exportedAt": "2026-07-06T02:47:13.989Z",
-  "source": "bundled-default",
+  "exportedAt": "2026-07-06T02:42:38.147Z",
+  "source": "http://localhost:3000",
   "storageKey": "product-card-template-v4",
   "data": {
     "cards": [
       {
-        "id": "sheet-1",
+        "id": "sheet-12",
         "brand": "유쏘랩",
         "line": "바이오",
         "title": "리네이처레이션",
@@ -20,7 +20,7 @@
         "color": "repair"
       },
       {
-        "id": "sheet-2",
+        "id": "sheet-60",
         "brand": "유쏘랩",
         "line": "바이오",
         "title": "리네이처레이션",
@@ -33,7 +33,7 @@
         "color": "repair"
       },
       {
-        "id": "sheet-3",
+        "id": "sheet-63",
         "brand": "유쏘랩",
         "line": "바이오",
         "title": "바이오 인센티브",
@@ -46,7 +46,7 @@
         "color": "repair"
       },
       {
-        "id": "sheet-4",
+        "id": "sheet-67",
         "brand": "유쏘랩",
         "line": "바이오",
         "title": "바이오 브라이트닝",
@@ -59,7 +59,7 @@
         "color": "repair"
       },
       {
-        "id": "sheet-5",
+        "id": "sheet-68",
         "brand": "유쏘랩",
         "line": "바이오",
         "title": "바이오 브라이트닝",
@@ -72,7 +72,7 @@
         "color": "sun"
       },
       {
-        "id": "sheet-6",
+        "id": "sheet-70",
         "brand": "유쏘랩",
         "line": "바이오",
         "title": "바이오 브라이트닝",
@@ -85,7 +85,7 @@
         "color": "sun"
       },
       {
-        "id": "sheet-7",
+        "id": "sheet-69",
         "brand": "유쏘랩",
         "line": "바이오",
         "title": "바이오 브라이트닝 ",
@@ -98,7 +98,7 @@
         "color": "sun"
       },
       {
-        "id": "sheet-8",
+        "id": "sheet-64",
         "brand": "유쏘랩",
         "line": "바이오",
         "title": "바이오 인센티브",
@@ -111,7 +111,7 @@
         "color": "repair"
       },
       {
-        "id": "sheet-9",
+        "id": "sheet-59",
         "brand": "유쏘랩",
         "line": "바이오",
         "title": "인센티브 리제너레이트",
@@ -124,7 +124,7 @@
         "color": "repair"
       },
       {
-        "id": "sheet-10",
+        "id": "sheet-58",
         "brand": "유쏘랩",
         "line": "바이오",
         "title": "리네이처레이션",
@@ -138,7 +138,7 @@
         "color": "repair"
       },
       {
-        "id": "sheet-11",
+        "id": "sheet-66",
         "brand": "유쏘랩",
         "line": "바이오",
         "title": "리네이처레이션",
@@ -151,7 +151,7 @@
         "color": "repair"
       },
       {
-        "id": "sheet-12",
+        "id": "sheet-62",
         "brand": "유쏘랩",
         "line": "바이오",
         "title": "리네이처레이션",
@@ -164,7 +164,7 @@
         "color": "repair"
       },
       {
-        "id": "sheet-13",
+        "id": "sheet-61",
         "brand": "유쏘랩",
         "line": "바이오",
         "title": "리네이처레이션 ",
@@ -178,7 +178,7 @@
         "color": "repair"
       },
       {
-        "id": "sheet-14",
+        "id": "sheet-57",
         "brand": "유쏘랩",
         "line": "바이오",
         "title": "리네이처레이션",
@@ -192,7 +192,7 @@
         "color": "repair"
       },
       {
-        "id": "sheet-15",
+        "id": "sheet-18",
         "brand": "유쏘랩",
         "line": "바이오",
         "title": "인텐시브",
@@ -205,7 +205,7 @@
         "color": "k"
       },
       {
-        "id": "sheet-16",
+        "id": "sheet-20",
         "brand": "유쏘랩",
         "line": "바이오",
         "title": "인텐시브",
@@ -219,7 +219,7 @@
         "price": "32,000원"
       },
       {
-        "id": "sheet-17",
+        "id": "sheet-76",
         "brand": "유쏘랩",
         "line": "바이오",
         "title": "인텐시브",
@@ -232,7 +232,7 @@
         "price": "50,000원/130,000원"
       },
       {
-        "id": "sheet-18",
+        "id": "sheet-23",
         "brand": "유쏘랩",
         "line": "바이오",
         "title": "센시티브  ",
@@ -245,7 +245,7 @@
         "color": "k"
       },
       {
-        "id": "sheet-19",
+        "id": "sheet-75",
         "brand": "유쏘랩",
         "line": "바이오",
         "title": "센시티브",
@@ -258,7 +258,7 @@
         "color": "k"
       },
       {
-        "id": "sheet-20",
+        "id": "sheet-74",
         "brand": "유쏘랩",
         "line": "바이오",
         "title": "센시티브",
@@ -271,7 +271,7 @@
         "color": "k"
       },
       {
-        "id": "sheet-21",
+        "id": "sheet-73",
         "brand": "유쏘랩",
         "line": "바이오",
         "title": "센시티브",
@@ -284,7 +284,7 @@
         "color": "k"
       },
       {
-        "id": "sheet-22",
+        "id": "sheet-72",
         "brand": "유쏘랩",
         "line": "바이오",
         "title": "센시티브",
@@ -297,7 +297,7 @@
         "color": "k"
       },
       {
-        "id": "sheet-23",
+        "id": "sheet-71",
         "brand": "유쏘랩",
         "line": "바이오",
         "title": "리네이처레이션",
@@ -311,7 +311,7 @@
         "color": "k"
       },
       {
-        "id": "sheet-24",
+        "id": "sheet-27",
         "brand": "유쏘랩",
         "line": "바이오",
         "title": "아줄렌",
@@ -325,7 +325,7 @@
         "color": "cica"
       },
       {
-        "id": "sheet-25",
+        "id": "sheet-31",
         "brand": "유쏘랩",
         "line": "바이오",
         "title": "아줄렌",
@@ -339,7 +339,7 @@
         "price": "85,000원"
       },
       {
-        "id": "sheet-26",
+        "id": "sheet-35",
         "brand": "유쏘랩",
         "line": "바이오",
         "title": "모이스처라이징",
@@ -352,7 +352,7 @@
         "bottom": "150ml"
       },
       {
-        "id": "sheet-27",
+        "id": "sheet-78",
         "brand": "유쏘랩",
         "line": "바이오",
         "title": "모이스처라이징",
@@ -365,7 +365,7 @@
         "bottom": "1000ml"
       },
       {
-        "id": "sheet-28",
+        "id": "sheet-79",
         "brand": "유쏘랩",
         "line": "바이오",
         "title": "모이스처라이징",
@@ -378,7 +378,7 @@
         "bottom": "50ml/100ml"
       },
       {
-        "id": "sheet-29",
+        "id": "sheet-80",
         "brand": "유쏘랩",
         "line": "바이오",
         "title": "모이스처라이징",
@@ -391,7 +391,7 @@
         "bottom": "500ml"
       },
       {
-        "id": "sheet-30",
+        "id": "sheet-65",
         "brand": "유쏘랩",
         "line": "바이오",
         "title": "모이스처라이징",
@@ -404,7 +404,7 @@
         "price": "40,000원/98,000원"
       },
       {
-        "id": "sheet-31",
+        "id": "sheet-47",
         "brand": "유쏘랩",
         "line": "바이오",
         "title": "바이오 인텐시브",
@@ -417,7 +417,7 @@
         "price": "50,000원"
       },
       {
-        "id": "sheet-32",
+        "id": "sheet-53",
         "brand": "유쏘랩",
         "line": "바이오",
         "title": "인텐시브 리제너레이트",
@@ -431,7 +431,7 @@
     ],
     "products": [
       {
-        "id": "sheet-1",
+        "id": "sheet-12",
         "brand": "유쏘랩",
         "line": "바이오",
         "title": "리네이처레이션",
@@ -445,7 +445,7 @@
         "color": "repair"
       },
       {
-        "id": "sheet-2",
+        "id": "sheet-60",
         "brand": "유쏘랩",
         "line": "바이오",
         "title": "리네이처레이션",
@@ -458,7 +458,7 @@
         "color": "repair"
       },
       {
-        "id": "sheet-3",
+        "id": "sheet-63",
         "brand": "유쏘랩",
         "line": "바이오",
         "title": "바이오 인센티브",
@@ -471,7 +471,7 @@
         "color": "repair"
       },
       {
-        "id": "sheet-4",
+        "id": "sheet-67",
         "brand": "유쏘랩",
         "line": "바이오",
         "title": "바이오 브라이트닝",
@@ -484,7 +484,7 @@
         "color": "repair"
       },
       {
-        "id": "sheet-5",
+        "id": "sheet-68",
         "brand": "유쏘랩",
         "line": "바이오",
         "title": "바이오 브라이트닝",
@@ -497,7 +497,7 @@
         "color": "sun"
       },
       {
-        "id": "sheet-6",
+        "id": "sheet-70",
         "brand": "유쏘랩",
         "line": "바이오",
         "title": "바이오 브라이트닝",
@@ -510,7 +510,7 @@
         "color": "sun"
       },
       {
-        "id": "sheet-7",
+        "id": "sheet-69",
         "brand": "유쏘랩",
         "line": "바이오",
         "title": "바이오 브라이트닝 ",
@@ -523,7 +523,7 @@
         "color": "sun"
       },
       {
-        "id": "sheet-8",
+        "id": "sheet-64",
         "brand": "유쏘랩",
         "line": "바이오",
         "title": "바이오 인센티브",
@@ -536,7 +536,7 @@
         "color": "repair"
       },
       {
-        "id": "sheet-9",
+        "id": "sheet-59",
         "brand": "유쏘랩",
         "line": "바이오",
         "title": "인센티브 리제너레이트",
@@ -549,7 +549,7 @@
         "color": "repair"
       },
       {
-        "id": "sheet-10",
+        "id": "sheet-58",
         "brand": "유쏘랩",
         "line": "바이오",
         "title": "리네이처레이션",
@@ -563,7 +563,7 @@
         "color": "repair"
       },
       {
-        "id": "sheet-11",
+        "id": "sheet-66",
         "brand": "유쏘랩",
         "line": "바이오",
         "title": "리네이처레이션",
@@ -576,7 +576,7 @@
         "color": "repair"
       },
       {
-        "id": "sheet-12",
+        "id": "sheet-62",
         "brand": "유쏘랩",
         "line": "바이오",
         "title": "리네이처레이션",
@@ -589,7 +589,7 @@
         "color": "repair"
       },
       {
-        "id": "sheet-13",
+        "id": "sheet-61",
         "brand": "유쏘랩",
         "line": "바이오",
         "title": "리네이처레이션 ",
@@ -603,7 +603,7 @@
         "color": "repair"
       },
       {
-        "id": "sheet-14",
+        "id": "sheet-57",
         "brand": "유쏘랩",
         "line": "바이오",
         "title": "리네이처레이션",
@@ -617,7 +617,7 @@
         "color": "repair"
       },
       {
-        "id": "sheet-15",
+        "id": "sheet-18",
         "brand": "유쏘랩",
         "line": "바이오",
         "title": "인텐시브",
@@ -630,7 +630,7 @@
         "color": "k"
       },
       {
-        "id": "sheet-16",
+        "id": "sheet-20",
         "brand": "유쏘랩",
         "line": "바이오",
         "title": "인텐시브",
@@ -644,7 +644,7 @@
         "price": "32,000원"
       },
       {
-        "id": "sheet-17",
+        "id": "sheet-76",
         "brand": "유쏘랩",
         "line": "바이오",
         "title": "인텐시브",
@@ -657,7 +657,7 @@
         "price": "50,000원/130,000원"
       },
       {
-        "id": "sheet-18",
+        "id": "sheet-23",
         "brand": "유쏘랩",
         "line": "바이오",
         "title": "센시티브  ",
@@ -670,7 +670,7 @@
         "color": "k"
       },
       {
-        "id": "sheet-19",
+        "id": "sheet-75",
         "brand": "유쏘랩",
         "line": "바이오",
         "title": "센시티브",
@@ -683,7 +683,7 @@
         "color": "k"
       },
       {
-        "id": "sheet-20",
+        "id": "sheet-74",
         "brand": "유쏘랩",
         "line": "바이오",
         "title": "센시티브",
@@ -696,7 +696,7 @@
         "color": "k"
       },
       {
-        "id": "sheet-21",
+        "id": "sheet-73",
         "brand": "유쏘랩",
         "line": "바이오",
         "title": "센시티브",
@@ -709,7 +709,7 @@
         "color": "k"
       },
       {
-        "id": "sheet-22",
+        "id": "sheet-72",
         "brand": "유쏘랩",
         "line": "바이오",
         "title": "센시티브",
@@ -722,7 +722,7 @@
         "color": "k"
       },
       {
-        "id": "sheet-23",
+        "id": "sheet-71",
         "brand": "유쏘랩",
         "line": "바이오",
         "title": "리네이처레이션",
@@ -736,7 +736,7 @@
         "color": "k"
       },
       {
-        "id": "sheet-24",
+        "id": "sheet-27",
         "brand": "유쏘랩",
         "line": "바이오",
         "title": "아줄렌",
@@ -750,7 +750,7 @@
         "color": "cica"
       },
       {
-        "id": "sheet-25",
+        "id": "sheet-31",
         "brand": "유쏘랩",
         "line": "바이오",
         "title": "아줄렌",
@@ -764,7 +764,7 @@
         "price": "85,000원"
       },
       {
-        "id": "sheet-26",
+        "id": "sheet-35",
         "brand": "유쏘랩",
         "line": "바이오",
         "title": "모이스처라이징",
@@ -777,7 +777,7 @@
         "bottom": "150ml"
       },
       {
-        "id": "sheet-27",
+        "id": "sheet-78",
         "brand": "유쏘랩",
         "line": "바이오",
         "title": "모이스처라이징",
@@ -790,7 +790,7 @@
         "bottom": "1000ml"
       },
       {
-        "id": "sheet-28",
+        "id": "sheet-79",
         "brand": "유쏘랩",
         "line": "바이오",
         "title": "모이스처라이징",
@@ -803,7 +803,7 @@
         "bottom": "50ml/100ml"
       },
       {
-        "id": "sheet-29",
+        "id": "sheet-80",
         "brand": "유쏘랩",
         "line": "바이오",
         "title": "모이스처라이징",
@@ -816,7 +816,7 @@
         "bottom": "500ml"
       },
       {
-        "id": "sheet-30",
+        "id": "sheet-65",
         "brand": "유쏘랩",
         "line": "바이오",
         "title": "모이스처라이징",
@@ -829,7 +829,7 @@
         "price": "40,000원/98,000원"
       },
       {
-        "id": "sheet-31",
+        "id": "sheet-47",
         "brand": "유쏘랩",
         "line": "바이오",
         "title": "바이오 인텐시브",
@@ -842,7 +842,7 @@
         "price": "50,000원"
       },
       {
-        "id": "sheet-32",
+        "id": "sheet-53",
         "brand": "유쏘랩",
         "line": "바이오",
         "title": "인텐시브 리제너레이트",
@@ -857,34 +857,34 @@
     "globalStyle": {
       "cellWidth": 201,
       "cellHeight": 147,
-      "width": 188,
-      "height": 125,
-      "borderRadius": 9,
-      "borderWidth": 6,
+      "width": 215,
+      "height": 160,
+      "borderRadius": 10.3,
+      "borderWidth": 6.9,
       "borderColor": "#878787",
       "backgroundColor": "#ffffff",
       "headerBackgroundColor": "#f6f7f9",
       "dividerColor": "#9aa3af",
-      "brandFontSize": 15,
+      "brandFontSize": 17.2,
       "brandColor": "#111827",
-      "lineFontSize": 15,
+      "lineFontSize": 17.2,
       "lineColor": "#111827",
       "categoryColor": "#9aa3af",
-      "titleFontSize": 15,
+      "titleFontSize": 17.2,
       "titleColor": "#111827",
-      "highlightFontSize": 15,
+      "highlightFontSize": 17.2,
       "highlightColor": "",
-      "tagFontSize": 10,
+      "tagFontSize": 11.4,
       "tagColor": "#111827",
-      "bottomFontSize": 8,
+      "bottomFontSize": 9.1,
       "bottomColor": "#1f2937",
-      "priceFontSize": 15,
+      "priceFontSize": 17.2,
       "priceColor": "",
-      "headerRowHeight": 22,
-      "bodyPaddingX": 15,
-      "bodyPaddingY": 8,
-      "bodyPaddingTop": 2,
-      "accentLineWidth": 2,
+      "headerRowHeight": 25.2,
+      "bodyPaddingX": 17.2,
+      "bodyPaddingY": 9.1,
+      "bodyPaddingTop": 2.3,
+      "accentLineWidth": 2.3,
       "accentLinePercent": 50,
       "accentColor": "",
       "accentLineOffsetX": 0,
@@ -893,9 +893,9 @@
       "lineAccentPercent": 0,
       "lineAccentOffsetX": 0,
       "titleMarginBottom": 0,
-      "dividerMarginBottom": 2,
-      "tagLineGap": 2,
-      "tagPriceGap": 2,
+      "dividerMarginBottom": 2.3,
+      "tagLineGap": 2.3,
+      "tagPriceGap": 2.3,
       "pricePinBottom": 1,
       "titleSingleLine": false,
       "topLineHeight": 2,
@@ -904,34 +904,34 @@
     "globalSettings": {
       "cellWidth": 201,
       "cellHeight": 147,
-      "width": 188,
-      "height": 125,
-      "borderRadius": 9,
-      "borderWidth": 6,
+      "width": 215,
+      "height": 160,
+      "borderRadius": 10.3,
+      "borderWidth": 6.9,
       "borderColor": "#878787",
       "backgroundColor": "#ffffff",
       "headerBackgroundColor": "#f6f7f9",
       "dividerColor": "#9aa3af",
-      "brandFontSize": 15,
+      "brandFontSize": 17.2,
       "brandColor": "#111827",
-      "lineFontSize": 15,
+      "lineFontSize": 17.2,
       "lineColor": "#111827",
       "categoryColor": "#9aa3af",
-      "titleFontSize": 15,
+      "titleFontSize": 17.2,
       "titleColor": "#111827",
-      "highlightFontSize": 15,
+      "highlightFontSize": 17.2,
       "highlightColor": "",
-      "tagFontSize": 10,
+      "tagFontSize": 11.4,
       "tagColor": "#111827",
-      "bottomFontSize": 8,
+      "bottomFontSize": 9.1,
       "bottomColor": "#1f2937",
-      "priceFontSize": 15,
+      "priceFontSize": 17.2,
       "priceColor": "",
-      "headerRowHeight": 22,
-      "bodyPaddingX": 15,
-      "bodyPaddingY": 8,
-      "bodyPaddingTop": 2,
-      "accentLineWidth": 2,
+      "headerRowHeight": 25.2,
+      "bodyPaddingX": 17.2,
+      "bodyPaddingY": 9.1,
+      "bodyPaddingTop": 2.3,
+      "accentLineWidth": 2.3,
       "accentLinePercent": 50,
       "accentColor": "",
       "accentLineOffsetX": 0,
@@ -940,9 +940,9 @@
       "lineAccentPercent": 0,
       "lineAccentOffsetX": 0,
       "titleMarginBottom": 0,
-      "dividerMarginBottom": 2,
-      "tagLineGap": 2,
-      "tagPriceGap": 2,
+      "dividerMarginBottom": 2.3,
+      "tagLineGap": 2.3,
+      "tagPriceGap": 2.3,
       "pricePinBottom": 1,
       "titleSingleLine": false,
       "topLineHeight": 2,
@@ -963,7 +963,7 @@
       }
     },
     "cardStyles": {
-      "sheet-18": {
+      "sheet-23": {
         "borderWidth": 2,
         "highlightColor": "#afed02",
         "priceColor": "#afed02",
@@ -974,33 +974,52 @@
         "dividerMarginBottom": 2,
         "tagPriceGap": 0
       },
-      "sheet-1": {
+      "sheet-12": {
         "borderWidth": 2
       },
-      "sheet-14": {
+      "sheet-57": {
         "borderWidth": 2
       },
-      "sheet-10": {
-        "borderWidth": 2
+      "sheet-58": {
+        "width": 215,
+        "height": 160,
+        "borderRadius": 10.3,
+        "borderWidth": 2.3,
+        "brandFontSize": 17.2,
+        "lineFontSize": 17.2,
+        "titleFontSize": 17.2,
+        "highlightFontSize": 17.2,
+        "tagFontSize": 11.4,
+        "bottomFontSize": 9.1,
+        "priceFontSize": 17.2,
+        "headerRowHeight": 25.2,
+        "bodyPaddingX": 17.2,
+        "bodyPaddingY": 9.1,
+        "bodyPaddingTop": 5.7,
+        "accentLineWidth": 2.3,
+        "titleMarginBottom": 5.7,
+        "dividerMarginBottom": 4.6,
+        "tagLineGap": 2.3,
+        "tagPriceGap": 2.3
       },
-      "sheet-9": {
+      "sheet-59": {
         "borderWidth": 2,
         "priceColor": "#3237d2",
         "accentColor": "#3237d2"
       },
-      "sheet-2": {
+      "sheet-60": {
         "borderWidth": 2,
         "priceFontSize": 12
       },
-      "sheet-13": {
+      "sheet-61": {
         "borderWidth": 2,
         "priceFontSize": 12
       },
-      "sheet-12": {
+      "sheet-62": {
         "borderWidth": 2,
         "priceFontSize": 13
       },
-      "sheet-3": {
+      "sheet-63": {
         "borderWidth": 2,
         "titleColor": "#1f2937",
         "highlightColor": "#f07f42",
@@ -1008,7 +1027,7 @@
         "accentColor": "#f07f42",
         "lineAccentColor": "#f07f42"
       },
-      "sheet-8": {
+      "sheet-64": {
         "borderWidth": 2,
         "titleColor": "#1f2937",
         "highlightColor": "#f07f42",
@@ -1016,11 +1035,11 @@
         "accentColor": "#f07f42",
         "lineAccentColor": "#f07f42"
       },
-      "sheet-11": {
+      "sheet-66": {
         "borderWidth": 2,
         "priceFontSize": 14
       },
-      "sheet-4": {
+      "sheet-67": {
         "borderWidth": 2,
         "titleColor": "#1f2937",
         "highlightColor": "#f5e20f",
@@ -1028,7 +1047,7 @@
         "accentColor": "#f5e20f",
         "lineAccentColor": "#f5e20f"
       },
-      "sheet-5": {
+      "sheet-68": {
         "borderWidth": 2,
         "titleColor": "#1f2937",
         "highlightColor": "#fae500",
@@ -1036,7 +1055,7 @@
         "accentColor": "#f5e20f",
         "lineAccentColor": "#f5e20f"
       },
-      "sheet-7": {
+      "sheet-69": {
         "borderWidth": 2,
         "titleColor": "#1f2937",
         "highlightColor": "#fae500",
@@ -1045,7 +1064,7 @@
         "accentColor": "#f5e20f",
         "lineAccentColor": "#f5e20f"
       },
-      "sheet-6": {
+      "sheet-70": {
         "borderWidth": 2,
         "titleColor": "#1f2937",
         "highlightColor": "#fae500",
@@ -1053,14 +1072,14 @@
         "accentColor": "#f5e20f",
         "lineAccentColor": "#f5e20f"
       },
-      "sheet-23": {
+      "sheet-71": {
         "borderWidth": 2,
         "bodyPaddingTop": 2,
         "titleMarginBottom": 0,
         "dividerMarginBottom": 2,
         "tagPriceGap": 0
       },
-      "sheet-22": {
+      "sheet-72": {
         "borderWidth": 2,
         "highlightColor": "#afed02",
         "priceColor": "#afed02",
@@ -1071,7 +1090,7 @@
         "dividerMarginBottom": 2,
         "tagPriceGap": 0
       },
-      "sheet-21": {
+      "sheet-73": {
         "borderWidth": 2,
         "highlightColor": "#afed02",
         "priceFontSize": 11,
@@ -1083,7 +1102,7 @@
         "dividerMarginBottom": 2,
         "tagPriceGap": 0
       },
-      "sheet-20": {
+      "sheet-74": {
         "borderWidth": 2,
         "highlightColor": "#afed02",
         "priceColor": "#afed02",
@@ -1094,7 +1113,7 @@
         "dividerMarginBottom": 2,
         "tagPriceGap": 0
       },
-      "sheet-19": {
+      "sheet-75": {
         "borderWidth": 2,
         "highlightColor": "#afed02",
         "priceColor": "#afed02",
@@ -1105,58 +1124,58 @@
         "dividerMarginBottom": 2,
         "tagPriceGap": 0
       },
-      "sheet-24": {
+      "sheet-27": {
         "borderWidth": 2,
         "titleFontSize": 13,
         "titleMarginBottom": 2
       },
-      "sheet-25": {
+      "sheet-31": {
         "borderWidth": 2,
         "titleFontSize": 14,
         "titleMarginBottom": 1
       },
-      "sheet-17": {
+      "sheet-76": {
         "borderWidth": 2,
         "priceFontSize": 11
       },
-      "sheet-15": {
+      "sheet-18": {
         "borderWidth": 2,
         "priceFontSize": 11
       },
-      "sheet-16": {
+      "sheet-20": {
         "borderWidth": 2,
         "titleFontSize": 14,
         "tagFontSize": 9,
         "priceFontSize": 14
       },
-      "sheet-28": {
+      "sheet-79": {
         "borderWidth": 2,
         "titleFontSize": 14,
         "priceFontSize": 11
       },
-      "sheet-29": {
+      "sheet-80": {
         "borderWidth": 2,
         "titleFontSize": 14
       },
-      "sheet-30": {
+      "sheet-65": {
         "borderWidth": 2,
         "priceFontSize": 12
       },
-      "sheet-27": {
+      "sheet-78": {
         "borderWidth": 2
       },
-      "sheet-32": {
+      "sheet-53": {
         "borderWidth": 2
       },
-      "sheet-31": {
+      "sheet-47": {
         "borderWidth": 2
       },
-      "sheet-26": {
+      "sheet-35": {
         "borderWidth": 2
       }
     },
     "styles": {
-      "sheet-18": {
+      "sheet-23": {
         "borderWidth": 2,
         "highlightColor": "#afed02",
         "priceColor": "#afed02",
@@ -1167,33 +1186,52 @@
         "dividerMarginBottom": 2,
         "tagPriceGap": 0
       },
-      "sheet-1": {
+      "sheet-12": {
         "borderWidth": 2
       },
-      "sheet-14": {
+      "sheet-57": {
         "borderWidth": 2
       },
-      "sheet-10": {
-        "borderWidth": 2
+      "sheet-58": {
+        "width": 215,
+        "height": 160,
+        "borderRadius": 10.3,
+        "borderWidth": 2.3,
+        "brandFontSize": 17.2,
+        "lineFontSize": 17.2,
+        "titleFontSize": 17.2,
+        "highlightFontSize": 17.2,
+        "tagFontSize": 11.4,
+        "bottomFontSize": 9.1,
+        "priceFontSize": 17.2,
+        "headerRowHeight": 25.2,
+        "bodyPaddingX": 17.2,
+        "bodyPaddingY": 9.1,
+        "bodyPaddingTop": 5.7,
+        "accentLineWidth": 2.3,
+        "titleMarginBottom": 5.7,
+        "dividerMarginBottom": 4.6,
+        "tagLineGap": 2.3,
+        "tagPriceGap": 2.3
       },
-      "sheet-9": {
+      "sheet-59": {
         "borderWidth": 2,
         "priceColor": "#3237d2",
         "accentColor": "#3237d2"
       },
-      "sheet-2": {
+      "sheet-60": {
         "borderWidth": 2,
         "priceFontSize": 12
       },
-      "sheet-13": {
+      "sheet-61": {
         "borderWidth": 2,
         "priceFontSize": 12
       },
-      "sheet-12": {
+      "sheet-62": {
         "borderWidth": 2,
         "priceFontSize": 13
       },
-      "sheet-3": {
+      "sheet-63": {
         "borderWidth": 2,
         "titleColor": "#1f2937",
         "highlightColor": "#f07f42",
@@ -1201,7 +1239,7 @@
         "accentColor": "#f07f42",
         "lineAccentColor": "#f07f42"
       },
-      "sheet-8": {
+      "sheet-64": {
         "borderWidth": 2,
         "titleColor": "#1f2937",
         "highlightColor": "#f07f42",
@@ -1209,11 +1247,11 @@
         "accentColor": "#f07f42",
         "lineAccentColor": "#f07f42"
       },
-      "sheet-11": {
+      "sheet-66": {
         "borderWidth": 2,
         "priceFontSize": 14
       },
-      "sheet-4": {
+      "sheet-67": {
         "borderWidth": 2,
         "titleColor": "#1f2937",
         "highlightColor": "#f5e20f",
@@ -1221,7 +1259,7 @@
         "accentColor": "#f5e20f",
         "lineAccentColor": "#f5e20f"
       },
-      "sheet-5": {
+      "sheet-68": {
         "borderWidth": 2,
         "titleColor": "#1f2937",
         "highlightColor": "#fae500",
@@ -1229,7 +1267,7 @@
         "accentColor": "#f5e20f",
         "lineAccentColor": "#f5e20f"
       },
-      "sheet-7": {
+      "sheet-69": {
         "borderWidth": 2,
         "titleColor": "#1f2937",
         "highlightColor": "#fae500",
@@ -1238,7 +1276,7 @@
         "accentColor": "#f5e20f",
         "lineAccentColor": "#f5e20f"
       },
-      "sheet-6": {
+      "sheet-70": {
         "borderWidth": 2,
         "titleColor": "#1f2937",
         "highlightColor": "#fae500",
@@ -1246,14 +1284,14 @@
         "accentColor": "#f5e20f",
         "lineAccentColor": "#f5e20f"
       },
-      "sheet-23": {
+      "sheet-71": {
         "borderWidth": 2,
         "bodyPaddingTop": 2,
         "titleMarginBottom": 0,
         "dividerMarginBottom": 2,
         "tagPriceGap": 0
       },
-      "sheet-22": {
+      "sheet-72": {
         "borderWidth": 2,
         "highlightColor": "#afed02",
         "priceColor": "#afed02",
@@ -1264,7 +1302,7 @@
         "dividerMarginBottom": 2,
         "tagPriceGap": 0
       },
-      "sheet-21": {
+      "sheet-73": {
         "borderWidth": 2,
         "highlightColor": "#afed02",
         "priceFontSize": 11,
@@ -1276,7 +1314,7 @@
         "dividerMarginBottom": 2,
         "tagPriceGap": 0
       },
-      "sheet-20": {
+      "sheet-74": {
         "borderWidth": 2,
         "highlightColor": "#afed02",
         "priceColor": "#afed02",
@@ -1287,7 +1325,7 @@
         "dividerMarginBottom": 2,
         "tagPriceGap": 0
       },
-      "sheet-19": {
+      "sheet-75": {
         "borderWidth": 2,
         "highlightColor": "#afed02",
         "priceColor": "#afed02",
@@ -1298,92 +1336,92 @@
         "dividerMarginBottom": 2,
         "tagPriceGap": 0
       },
-      "sheet-24": {
+      "sheet-27": {
         "borderWidth": 2,
         "titleFontSize": 13,
         "titleMarginBottom": 2
       },
-      "sheet-25": {
+      "sheet-31": {
         "borderWidth": 2,
         "titleFontSize": 14,
         "titleMarginBottom": 1
       },
-      "sheet-17": {
+      "sheet-76": {
         "borderWidth": 2,
         "priceFontSize": 11
       },
-      "sheet-15": {
+      "sheet-18": {
         "borderWidth": 2,
         "priceFontSize": 11
       },
-      "sheet-16": {
+      "sheet-20": {
         "borderWidth": 2,
         "titleFontSize": 14,
         "tagFontSize": 9,
         "priceFontSize": 14
       },
-      "sheet-28": {
+      "sheet-79": {
         "borderWidth": 2,
         "titleFontSize": 14,
         "priceFontSize": 11
       },
-      "sheet-29": {
+      "sheet-80": {
         "borderWidth": 2,
         "titleFontSize": 14
       },
-      "sheet-30": {
+      "sheet-65": {
         "borderWidth": 2,
         "priceFontSize": 12
       },
-      "sheet-27": {
+      "sheet-78": {
         "borderWidth": 2
       },
-      "sheet-32": {
+      "sheet-53": {
         "borderWidth": 2
       },
-      "sheet-31": {
+      "sheet-47": {
         "borderWidth": 2
       },
-      "sheet-26": {
+      "sheet-35": {
         "borderWidth": 2
       }
     },
     "presets": [
       {
-        "id": "sheet-preset_mr6hx1i5e903q",
+        "id": "sheet-preset_mr8l8d2fpa50t",
         "name": "시트 스타일",
-        "category": "시트 스타일",
+        "category": "215 x 160",
         "style": {
           "cellWidth": 201,
           "cellHeight": 147,
-          "width": 188,
-          "height": 125,
-          "borderRadius": 9,
-          "borderWidth": 6,
+          "width": 215,
+          "height": 160,
+          "borderRadius": 10.3,
+          "borderWidth": 6.9,
           "borderColor": "#878787",
           "backgroundColor": "#ffffff",
           "headerBackgroundColor": "#f6f7f9",
           "dividerColor": "#9aa3af",
-          "brandFontSize": 15,
+          "brandFontSize": 17.2,
           "brandColor": "#111827",
-          "lineFontSize": 15,
+          "lineFontSize": 17.2,
           "lineColor": "#111827",
           "categoryColor": "#9aa3af",
-          "titleFontSize": 15,
+          "titleFontSize": 17.2,
           "titleColor": "#111827",
-          "highlightFontSize": 15,
+          "highlightFontSize": 17.2,
           "highlightColor": "",
-          "tagFontSize": 10,
+          "tagFontSize": 11.4,
           "tagColor": "#111827",
-          "bottomFontSize": 8,
+          "bottomFontSize": 9.1,
           "bottomColor": "#1f2937",
-          "priceFontSize": 15,
+          "priceFontSize": 17.2,
           "priceColor": "",
-          "headerRowHeight": 22,
-          "bodyPaddingX": 15,
-          "bodyPaddingY": 8,
-          "bodyPaddingTop": 2,
-          "accentLineWidth": 2,
+          "headerRowHeight": 25.2,
+          "bodyPaddingX": 17.2,
+          "bodyPaddingY": 9.1,
+          "bodyPaddingTop": 2.3,
+          "accentLineWidth": 2.3,
           "accentLinePercent": 50,
           "accentColor": "",
           "accentLineOffsetX": 0,
@@ -1392,280 +1430,15 @@
           "lineAccentPercent": 0,
           "lineAccentOffsetX": 0,
           "titleMarginBottom": 0,
-          "dividerMarginBottom": 2,
-          "tagLineGap": 2,
-          "tagPriceGap": 2,
+          "dividerMarginBottom": 2.3,
+          "tagLineGap": 2.3,
+          "tagPriceGap": 2.3,
           "pricePinBottom": 1,
           "titleSingleLine": false,
           "topLineHeight": 2,
           "thickTopLineHeight": 3
         },
-        "savedAt": "2026-07-04T15:07:05.309Z"
-      },
-      {
-        "id": "sheet-preset_mr5bgdhcxzil6",
-        "name": "시트 스타일",
-        "category": "시트 스타일",
-        "style": {
-          "cellWidth": 201,
-          "cellHeight": 147,
-          "width": 188,
-          "height": 166,
-          "borderRadius": 9,
-          "borderWidth": 2,
-          "borderColor": "#d1d1d1",
-          "backgroundColor": "#ffffff",
-          "headerBackgroundColor": "#f6f7f9",
-          "dividerColor": "#9aa3af",
-          "brandFontSize": 15,
-          "brandColor": "#111827",
-          "lineFontSize": 15,
-          "lineColor": "#111827",
-          "categoryColor": "#9aa3af",
-          "titleFontSize": 15,
-          "titleColor": "#111827",
-          "highlightFontSize": 15,
-          "highlightColor": "",
-          "tagFontSize": 10,
-          "tagColor": "#111827",
-          "bottomFontSize": 8,
-          "bottomColor": "#1f2937",
-          "priceFontSize": 15,
-          "priceColor": "",
-          "headerRowHeight": 22,
-          "bodyPaddingX": 15,
-          "bodyPaddingY": 8,
-          "bodyPaddingTop": 5,
-          "accentLineWidth": 2,
-          "accentLinePercent": 50,
-          "accentColor": "",
-          "accentLineOffsetX": 0,
-          "lineAccentColor": "",
-          "lineAccentWidth": 0,
-          "lineAccentPercent": 0,
-          "lineAccentOffsetX": 0,
-          "titleMarginBottom": 5,
-          "dividerMarginBottom": 4,
-          "tagLineGap": 2,
-          "tagPriceGap": 2,
-          "pricePinBottom": 1,
-          "titleSingleLine": false,
-          "topLineHeight": 2,
-          "thickTopLineHeight": 3
-        },
-        "savedAt": "2026-07-03T19:18:23.808Z"
-      },
-      {
-        "id": "sheet-preset_mr58ihhtj2zlb",
-        "name": "시트 스타일",
-        "category": "시트 스타일",
-        "style": {
-          "cellWidth": 201,
-          "cellHeight": 147,
-          "width": 188,
-          "height": 125,
-          "borderRadius": 9,
-          "borderWidth": 2,
-          "borderColor": "#d1d1d1",
-          "backgroundColor": "#ffffff",
-          "headerBackgroundColor": "#f6f7f9",
-          "dividerColor": "#9aa3af",
-          "brandFontSize": 15,
-          "brandColor": "#111827",
-          "lineFontSize": 15,
-          "lineColor": "#111827",
-          "categoryColor": "#9aa3af",
-          "titleFontSize": 15,
-          "titleColor": "#111827",
-          "highlightFontSize": 15,
-          "highlightColor": "",
-          "tagFontSize": 10,
-          "tagColor": "#111827",
-          "bottomFontSize": 8,
-          "bottomColor": "#1f2937",
-          "priceFontSize": 15,
-          "priceColor": "",
-          "headerRowHeight": 22,
-          "bodyPaddingX": 15,
-          "bodyPaddingY": 8,
-          "bodyPaddingTop": 2,
-          "accentLineWidth": 2,
-          "accentLinePercent": 50,
-          "accentColor": "",
-          "accentLineOffsetX": 0,
-          "lineAccentColor": "",
-          "lineAccentWidth": 0,
-          "lineAccentPercent": 0,
-          "lineAccentOffsetX": 0,
-          "titleMarginBottom": 0,
-          "dividerMarginBottom": 2,
-          "tagLineGap": 2,
-          "tagPriceGap": 0,
-          "pricePinBottom": 1,
-          "titleSingleLine": false,
-          "topLineHeight": 2,
-          "thickTopLineHeight": 3
-        },
-        "savedAt": "2026-07-03T17:56:03.473Z"
-      },
-      {
-        "id": "sheet-preset_mr58eyaen4gn6",
-        "name": "시트 스타일",
-        "category": "시트 스타일",
-        "style": {
-          "cellWidth": 201,
-          "cellHeight": 147,
-          "width": 188,
-          "height": 149,
-          "borderRadius": 9,
-          "borderWidth": 2,
-          "borderColor": "#d1d1d1",
-          "backgroundColor": "#ffffff",
-          "headerBackgroundColor": "#f6f7f9",
-          "dividerColor": "#9aa3af",
-          "brandFontSize": 15,
-          "brandColor": "#111827",
-          "lineFontSize": 15,
-          "lineColor": "#111827",
-          "categoryColor": "#9aa3af",
-          "titleFontSize": 15,
-          "titleColor": "#111827",
-          "highlightFontSize": 15,
-          "highlightColor": "",
-          "tagFontSize": 10,
-          "tagColor": "#111827",
-          "bottomFontSize": 8,
-          "bottomColor": "#1f2937",
-          "priceFontSize": 15,
-          "priceColor": "",
-          "headerRowHeight": 22,
-          "bodyPaddingX": 15,
-          "bodyPaddingY": 8,
-          "bodyPaddingTop": 5,
-          "accentLineWidth": 2,
-          "accentLinePercent": 50,
-          "accentColor": "",
-          "accentLineOffsetX": 0,
-          "lineAccentColor": "",
-          "lineAccentWidth": 0,
-          "lineAccentPercent": 0,
-          "lineAccentOffsetX": 0,
-          "titleMarginBottom": 5,
-          "dividerMarginBottom": 4,
-          "tagLineGap": 2,
-          "tagPriceGap": 2,
-          "pricePinBottom": 0,
-          "titleSingleLine": false,
-          "topLineHeight": 2,
-          "thickTopLineHeight": 3
-        },
-        "savedAt": "2026-07-03T17:53:18.614Z"
-      },
-      {
-        "id": "sheet-preset_mr5893y3cdm0t",
-        "name": "시트 스타일",
-        "category": "시트 스타일",
-        "style": {
-          "cellWidth": 201,
-          "cellHeight": 147,
-          "width": 188,
-          "height": 125,
-          "borderRadius": 9,
-          "borderWidth": 2,
-          "borderColor": "#d1d1d1",
-          "backgroundColor": "#ffffff",
-          "headerBackgroundColor": "#f6f7f9",
-          "dividerColor": "#9aa3af",
-          "brandFontSize": 15,
-          "brandColor": "#111827",
-          "lineFontSize": 15,
-          "lineColor": "#111827",
-          "categoryColor": "#9aa3af",
-          "titleFontSize": 15,
-          "titleColor": "#111827",
-          "highlightFontSize": 15,
-          "highlightColor": "",
-          "tagFontSize": 10,
-          "tagColor": "#111827",
-          "bottomFontSize": 8,
-          "bottomColor": "#1f2937",
-          "priceFontSize": 14,
-          "priceColor": "",
-          "headerRowHeight": 22,
-          "bodyPaddingX": 15,
-          "bodyPaddingY": 8,
-          "bodyPaddingTop": 3,
-          "accentLineWidth": 3,
-          "accentLinePercent": 50,
-          "accentColor": "",
-          "accentLineOffsetX": 0,
-          "lineAccentColor": "",
-          "lineAccentWidth": 0,
-          "lineAccentPercent": 0,
-          "lineAccentOffsetX": 0,
-          "titleMarginBottom": 4,
-          "dividerMarginBottom": 4,
-          "tagLineGap": 1,
-          "tagPriceGap": 1,
-          "pricePinBottom": 1,
-          "titleSingleLine": false,
-          "topLineHeight": 2,
-          "thickTopLineHeight": 3
-        },
-        "savedAt": "2026-07-03T17:48:46.011Z"
-      },
-      {
-        "id": "sheet-preset_mr57qf1dfo29e",
-        "name": "시트 스타일",
-        "category": "시트 스타일",
-        "style": {
-          "cellWidth": 201,
-          "cellHeight": 147,
-          "width": 188,
-          "height": 125,
-          "borderRadius": 9,
-          "borderWidth": 2,
-          "borderColor": "#d1d1d1",
-          "backgroundColor": "#ffffff",
-          "headerBackgroundColor": "#f6f7f9",
-          "dividerColor": "#9aa3af",
-          "brandFontSize": 15,
-          "brandColor": "#111827",
-          "lineFontSize": 15,
-          "lineColor": "#111827",
-          "categoryColor": "#9aa3af",
-          "titleFontSize": 15,
-          "titleColor": "#111827",
-          "highlightFontSize": 15,
-          "highlightColor": "",
-          "tagFontSize": 10,
-          "tagColor": "#111827",
-          "bottomFontSize": 8,
-          "bottomColor": "#1f2937",
-          "priceFontSize": 15,
-          "priceColor": "",
-          "headerRowHeight": 22,
-          "bodyPaddingX": 15,
-          "bodyPaddingY": 8,
-          "bodyPaddingTop": 5,
-          "accentLineWidth": 2,
-          "accentLinePercent": 50,
-          "accentColor": "",
-          "accentLineOffsetX": 0,
-          "lineAccentColor": "",
-          "lineAccentWidth": 0,
-          "lineAccentPercent": 0,
-          "lineAccentOffsetX": 0,
-          "titleMarginBottom": 5,
-          "dividerMarginBottom": 4,
-          "tagLineGap": 2,
-          "tagPriceGap": 2,
-          "pricePinBottom": 0,
-          "titleSingleLine": false,
-          "topLineHeight": 2,
-          "thickTopLineHeight": 3
-        },
-        "savedAt": "2026-07-03T17:34:13.921Z"
+        "savedAt": "2026-07-06T02:15:24.711Z"
       }
     ],
     "ui": {
@@ -1676,7 +1449,8 @@
       },
       "selection": [],
       "exportScope": "all",
-      "multiSelectMode": false
+      "multiSelectMode": false,
+      "selectedRange": []
     }
   }
 }

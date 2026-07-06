@@ -83,9 +83,9 @@ export const SHEET_CELL_HEIGHT_LEGACY = Math.round((EXCEL_ROW_HEIGHT_LEGACY * 96
 
 /** 셀 안 제품 카드 크기 */
 
-export const SHEET_CARD_WIDTH = 188;
+export const SHEET_CARD_WIDTH = 215;
 
-export const SHEET_CARD_HEIGHT = Math.round(142 * (EXCEL_ROW_HEIGHT / EXCEL_ROW_HEIGHT_LEGACY));
+export const SHEET_CARD_HEIGHT = 160;
 
 /** 가격 2줄(//) 카드 기본 높이 */
 export const SHEET_CARD_HEIGHT_DUAL = Math.round(188 * (EXCEL_ROW_HEIGHT / EXCEL_ROW_HEIGHT_LEGACY));
